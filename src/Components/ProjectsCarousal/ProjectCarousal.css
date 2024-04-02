@@ -1,0 +1,9 @@
+.Project-container {
+    border-radius: 45px;
+    background: #e0e0e0;
+    box-shadow: 26px 26px 55px #aaaaaa,
+        -26px -26px 55px #ffffff;
+    padding: 80px 50px;
+    max-width: 1600px;
+    margin: 100px auto;
+}

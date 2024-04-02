@@ -1,0 +1,36 @@
+.work-container{
+    border-radius: 45px;
+        background: #e0e0e0;
+        box-shadow: 26px 26px 55px #aaaaaa,
+            -26px -26px 55px #ffffff;
+            padding: 100px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1600px;
+         
+}
+
+.embla {
+    overflow: hidden;
+    max-width: 600px;
+    border-radius: 45px;
+  
+}
+
+.embla__container {
+    display: flex;
+    max-height: 500px;
+}
+
+.embla__slide {
+flex: 0 0 100%;
+    /* Slide covers 50% of the viewport */
+    min-width: 0;
+}
+.embla__slide image{
+
+    max-height: 10px !important;
+    object-fit: contain;
+
+}
