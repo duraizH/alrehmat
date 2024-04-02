@@ -2,7 +2,7 @@
 import {al_rehmat_residencie_description} from "../Data/projectData.js"
 import res from "../assets/residencia.webp";
 import mer from "../assets/meriton.webp";
-import ProjectShowCase from "../Components/projectShowCase/projectShowCase";
+import ProjectShowCase from "../Components/projectShowCase/ProjectShowCase.jsx";
 
 const Projects = () => {
   return (
@@ -18,7 +18,7 @@ const Projects = () => {
           <ProjectShowCase
             title={"Al Rehmat Royal Residencia"}
             description={al_rehmat_residencie_description}
-            img={res}
+            img={mer}
           />
         </div>
       </section>
