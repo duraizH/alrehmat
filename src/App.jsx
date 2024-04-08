@@ -35,6 +35,7 @@ function App() {
           <Route path="/registration" element={<DealersRegistration />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/meriton" element={<Meriton />} />
+          <Route path="*" element={<Home/>} />
         </Routes>
         <Footer />
       </BrowserRouter>

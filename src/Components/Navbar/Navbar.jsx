@@ -3,7 +3,7 @@ import logo from "../../assets/logos.png"
 import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-white">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -65,27 +65,27 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li>
+          <li className="text-black ">
             <Link className="font-bold" to="/">
               HOME
             </Link>
           </li>
-          <li>
+          <li className="text-black ">
             <Link className="font-bold" to="/about">
               ABOUT US
             </Link>
           </li>
-          <li>
+          <li className="text-black ">
             <Link className="font-bold" to="/projects">
               PROJECTS
             </Link>
           </li>
-          <li>
+          <li className="text-black ">
             <Link className="font-bold" to="/registration">
               DEALERS REGISTRATION
             </Link>
           </li>
-          <li>
+          <li className="text-black ">
             <Link className="font-bold" to="/contact">
               CONTACT US
             </Link>
