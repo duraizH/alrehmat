@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div className="navbar bg-white">
-      <div className="navbar-start">
+      <div className="navbar-start w-11/12">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -54,14 +54,13 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="">
+        <Link to="/" className="">
           <img
-            
-            className=" lg:w-96 md:w-56  sm:w-60"
+            className=" lg:w-96 md:w-56"
             src={logo}
             alt="Al-Rehmat Developers"
           />
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
