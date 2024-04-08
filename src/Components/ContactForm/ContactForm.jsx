@@ -23,7 +23,7 @@ import TextArea from "../Inputs/TextArea";
                       label={"Email address"}
                       placeholder={"Email address"}
                     />
-                    <TextArea/>
+                    <TextArea />
 
                     <button
                       type="submit"
@@ -92,10 +92,20 @@ import TextArea from "../Inputs/TextArea";
                           <p className="mb-2 font-bold dark:text-white">
                             Address
                           </p>
-                          <p className="text-neutral-500 dark:text-neutral-200">
-                            Residencia Near Millat Tractor Ltd, 8km Sheikhupura
-                            road Lahore, Punjab, Pakistan-54000
-                          </p>
+                          <ul className=" list-disc space-y-5">
+                            <li>
+                              <p className="text-neutral-500 dark:text-neutral-200">
+                                Residencia Near Millat Tractor Ltd, 8km
+                                Sheikhupura road Lahore, Punjab, Pakistan-54000
+                              </p>
+                            </li>
+                            <li>
+                              <p className="text-neutral-500 dark:text-neutral-200">
+                                50-D, Block D Opf Housing Scheme, Lahore,
+                                Punjab, Pakistan
+                              </p>
+                            </li>
+                          </ul>
                         </div>
                       </div>
                     </div>
