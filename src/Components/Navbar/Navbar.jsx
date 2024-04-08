@@ -57,7 +57,7 @@ const Navbar = () => {
         <a className="">
           <img
             
-            className=" lg:w-96 md:w-56  sm:w-56"
+            className=" lg:w-96 md:w-56  sm:w-60"
             src={logo}
             alt="Al-Rehmat Developers"
           />
@@ -93,7 +93,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end sm:btn-sm">
-        <Link to="/contact" className="btn font-bold">
+        <Link to="/contact" className="font-bold btn lg:btn-lg md:btn-sm btn-xs">
           MEET US
         </Link>
       </div>
