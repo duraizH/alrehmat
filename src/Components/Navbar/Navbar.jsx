@@ -56,8 +56,8 @@ const Navbar = () => {
         </div>
         <a className="">
           <img
-            width={96}
-            className="  md:w-96 sm:w-64"
+            
+            className=" lg:w-96 md:w-56  sm:w-56"
             src={logo}
             alt="Al-Rehmat Developers"
           />
@@ -65,7 +65,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li className="text-black ">
+          <li className=" text-black ">
             <Link className="font-bold" to="/">
               HOME
             </Link>
@@ -92,7 +92,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end sm:btn-sm">
         <Link to="/contact" className="btn font-bold">
           MEET US
         </Link>
