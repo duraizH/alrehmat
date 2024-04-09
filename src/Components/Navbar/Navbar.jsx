@@ -1,9 +1,34 @@
 import React from 'react'
+import { useState,useEffect } from 'react';
 import logo from "../../assets/logos.png"
 import { Link } from 'react-router-dom';
 const Navbar = () => {
+
+   const [isScrolled, setIsScrolled] = useState(false);
+
+   useEffect(() => {
+     const handleScroll = () => {
+       const scrollPosition =
+         window.pageYOffset ||
+         window.scrollY ||
+         document.documentElement.scrollTop ||
+         0;
+       setIsScrolled(scrollPosition > 0);;
+       setIsScrolled(scrollPosition > 0);
+     };
+
+     window.addEventListener("scroll", handleScroll);
+     return () => {
+       window.removeEventListener("scroll", handleScroll);
+     };
+   }, []);
+
   return (
-    <div className="navbar bg-white">
+    <div
+      className={`navbar bg-white  z-50 w-full transition-all duration-300 ${
+        isScrolled ? "bg-white shadow-md" : ""
+      }`}
+    >
       <div className=" w-11/12 navbar-start md:w-3/6 ">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -64,7 +89,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li className=" text-black ">
+          <li className=" text-black  ">
             <Link className="font-bold" to="/">
               HOME
             </Link>
@@ -94,7 +119,7 @@ const Navbar = () => {
       <div className="navbar-end sm:btn-sm">
         <Link
           to="/contact"
-          className="font-bold btn lg:btn-lg md:btn-sm btn-xs"
+          className="font-bold btn lg:btn-lg md:btn-sm btn-xs text-white outline-none border-[0]   bg-[#CBA664]"
         >
           MEET US
         </Link>

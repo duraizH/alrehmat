@@ -19,7 +19,7 @@ import AboutCard from './AboutCard';
 const Aboutbanners = () => {
   return (
     <>
-      <section className="relative bg-blue-gray-50/50 ">
+      <section className="relative bg-white ">
         <div className="container mx-auto">
           <div className="container text-center mx-auto">
             <h1 className="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">

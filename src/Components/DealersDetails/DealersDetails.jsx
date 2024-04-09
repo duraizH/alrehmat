@@ -4,7 +4,7 @@ import CardDealers from "./CardDealers";
 
  const DealersDetails = () => {
   return (
-    <section className="relative bg-blue-gray-50/50   mb-20 ">
+    <section className="relative bg-white   mb-20 ">
       <div className="container mx-auto">
         <h1 className=" text-center mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
           <br />

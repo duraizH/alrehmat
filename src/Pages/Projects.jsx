@@ -9,7 +9,7 @@ const Projects = () => {
     <>
       <section className="my-20">
         {/* <ShowCase img1={res} img2={mer} /> */}
-        <div className="flex m-auto max-w-[1600px] flex-wrap">
+        <div className=" mx-auto grid grid-cols-2 container max-w-[1600px] grid- ">
           <ProjectShowCase
             title={"Al Rehmat Royal Residencia"}
             description={al_rehmat_residencie_description}

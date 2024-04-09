@@ -6,7 +6,7 @@ function ProjectShowCase({ img,title,description }) {
       <motion.div
       className="hover:rounded-lg transition-all"
       >
-        <img className="w-100 rounded-lg hover:scale-110 transition-all" src={img} alt={title} />
+        <img className="w-full rounded-lg hover:scale-110 transition-all" src={img} alt={title} />
       </motion.div>
       <motion.div
         initial={{

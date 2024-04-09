@@ -5,7 +5,7 @@ import TextArea from "../Inputs/TextArea";
 
 const DealerContactForm = () => {
   return (
-    <section className="relative bg-blue-gray-50/50 mt-40   mb-20 ">
+    <section className="relative bg-white mt-40   mb-20 ">
       <div className="container px-6 md:px-12  mx-auto">
         <div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]">
           <div className="flex flex-wrap">
@@ -84,10 +84,20 @@ const DealerContactForm = () => {
                     </div>
                     <div className="ml-6 grow">
                       <p className="mb-2 font-bold dark:text-white">Address</p>
-                      <p className="text-neutral-500 dark:text-neutral-200">
-                        Residencia Near Millat Tractor Ltd, 8km Sheikhupura road
-                        Lahore, Punjab, Pakistan-54000
-                      </p>
+                      <ul className=" list-disc space-y-5">
+                        <li>
+                          <p className="text-neutral-500 dark:text-neutral-200">
+                            Residencia Near Millat Tractor Ltd, 8km Sheikhupura
+                            road Lahore, Punjab, Pakistan-54000
+                          </p>
+                        </li>
+                        <li>
+                          <p className="text-neutral-500 dark:text-neutral-200">
+                            50-D, Block D Opf Housing Scheme, Lahore, Punjab,
+                            Pakistan
+                          </p>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
