@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div className="navbar bg-white">
-      <div className="navbar-start w-11/12">
+      <div className=" w-11/12 navbar-start md:w-3/6 ">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -92,7 +92,10 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end sm:btn-sm">
-        <Link to="/contact" className="font-bold btn lg:btn-lg md:btn-sm btn-xs">
+        <Link
+          to="/contact"
+          className="font-bold btn lg:btn-lg md:btn-sm btn-xs"
+        >
           MEET US
         </Link>
       </div>
