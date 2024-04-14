@@ -13,7 +13,7 @@ const Navbar = () => {
          window.scrollY ||
          document.documentElement.scrollTop ||
          0;
-       setIsScrolled(scrollPosition > 0);;
+       setIsScrolled(scrollPosition > 0);
        setIsScrolled(scrollPosition > 0);
      };
 
@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`navbar bg-white  z-50 w-full transition-all duration-300 ${
+      className={`fixed top-0 right-0 left-0  navbar bg-white  z-50 w-full transition-all duration-300 ${
         isScrolled ? "bg-white shadow-md" : ""
       }`}
     >
