@@ -46,7 +46,7 @@ function App() {
         message={
           "Welcome to Al-Rehmat Developers,\n Please type your query and our agent will respond to you soon.\n Thank you."
         }
-        phoneNumber="+923044659952"
+        phoneNumber="+923010000762"
       />
     </>
   );
