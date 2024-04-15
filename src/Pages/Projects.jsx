@@ -3,7 +3,7 @@ import {al_rehmat_residencie_description} from "../Data/projectData.js"
 import res from "../assets/residencia.webp";
 import mer from "../assets/meriton.webp";
 import ProjectShowCase from "../Components/projectShowCase/ProjectShowCase.jsx";
-import Card from "../Components/card/card.jsx";
+import Card from "../Components/Card/Card.jsx";
 import meritonCover from "../assets/meritonCover.jpg"
 import meritonModel from "../assets/meritonModel.png"
 import meritonTitle from "../assets/meritonTitle.png"
