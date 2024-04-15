@@ -4,8 +4,6 @@ import reactSnapPlugin from 'vite-plugin-react-snap';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), reactSnapPlugin({
-    injectScript: true,
-  }),],
+  plugins: [react()],
   
 })
