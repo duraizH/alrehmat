@@ -15,10 +15,15 @@ import experience from "../../assets/experience.webp"
 import safety from "../../assets/community.webp"
 import client from "../../assets/client.webp";
 import AboutCard from './AboutCard';
+import { Helmet } from 'react-helmet';
 
 const Aboutbanners = () => {
   return (
     <>
+      <Helmet>
+        <title>About Al-Rehmat</title>
+        <meta name="description" content="About Al Rehmat Developers" />
+      </Helmet>
       <section className="relative bg-white ">
         <div className="container mx-auto">
           <div className="container text-center mx-auto">

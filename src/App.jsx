@@ -12,6 +12,7 @@ import { useEffect } from "react";
 // import { ReactComponent as CompanyIcon } from "./assets/CompanySVG";
 import { WhatsAppWidget } from "react-whatsapp-widget";
 import "react-whatsapp-widget/dist/index.css";
+import { Helmet } from "react-helmet";
 function App() {
 
   function ScrollToTop() {
@@ -25,6 +26,15 @@ function App() {
   }
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Al Rehmat Developers</title>
+        <meta
+          name="google-site-verification"
+          content="ZaamaPju4b_YQslADdx5QhirEtNsrkxE8IGpPmEEHpE"
+        />
+        <link rel="canonical" href="https://alrehmatdevelopers.com/" />
+      </Helmet>
       <BrowserRouter>
         <Navbar />
         <ScrollToTop />
@@ -35,7 +45,7 @@ function App() {
           <Route path="/registration" element={<DealersRegistration />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/meriton" element={<Meriton />} />
-          <Route path="*" element={<Home/>} />
+          <Route path="*" element={<Home />} />
         </Routes>
         <Footer />
       </BrowserRouter>

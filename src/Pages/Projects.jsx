@@ -7,10 +7,15 @@ import Card from "../Components/Card/Card.jsx";
 import meritonCover from "../assets/meritonCover.jpg"
 import meritonModel from "../assets/meritonModel.png"
 import meritonTitle from "../assets/meritonTitle.png"
+import { Helmet } from "react-helmet";
 
 const Projects = () => {
   return (
     <>
+      <Helmet>
+        <title>Projects Al-Rehmat</title>
+        <meta name="description" content="Projects Al Rehmat Developers" />
+      </Helmet>
       <section className="my-20">
         {/* <ShowCase img1={res} img2={mer} /> */}
 
