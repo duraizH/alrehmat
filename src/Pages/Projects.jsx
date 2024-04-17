@@ -8,6 +8,7 @@ import meritonCover from "../assets/meritonCover.jpg"
 import meritonModel from "../assets/meritonModel.png"
 import meritonTitle from "../assets/meritonTitle.png"
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   return (
@@ -19,8 +20,10 @@ const Projects = () => {
       <section className="my-20">
         {/* <ShowCase img1={res} img2={mer} /> */}
 
-        <div className=" mx-auto grid grid-cols-12 container max-w-[1000px] ">
-          <Card imgsrcModel={meritonModel} imgsrcCover={meritonCover} />
+        <div className=" mx-auto grid container max-w-[1000px] justify-items-center align-baseline ">
+          <Link to={`/projects/meriton`}>
+            <Card imgsrcModel={meritonModel} imgsrcCover={meritonCover} />
+          </Link>
           {/* <ProjectShowCase
             title={"Al Rehmat Royal Residencia"}
             description={al_rehmat_residencie_description}

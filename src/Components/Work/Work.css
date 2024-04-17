@@ -4,10 +4,9 @@
         box-shadow: 26px 26px 55px #aaaaaa,
             -26px -26px 55px #ffffff;
             padding: 100px 0px;
-            display: flex;
             justify-content: center;
             align-items: center;
-            max-width: 1600px;
+            max-width: 1400px;
          
 }
 
