@@ -11,7 +11,12 @@ const CTA = () => {
             <div className="grid  gap-12 grid-cols-2">
               <div className="mb-12 lg:mb-0 col-span-2 max-w-7xl mx-auto  ">
                 <div className="block rounded-lg bg-white px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-800 md:px-12">
-                  <form className="text-center" netlify name="CTA" method="post">
+                  <form
+                    className="text-center"
+                    netlify
+                    name="CTA"
+                    method="post"
+                  >
                     <div className="grid md:grid-cols-2 md:gap-6">
                       <InputField
                         type={"text"}
@@ -29,7 +34,7 @@ const CTA = () => {
                       label={"Email address"}
                       placeholder={"Email address"}
                     />
-                    <TextArea/>
+                    <TextArea />
                     <button
                       type="submit"
                       data-te-ripple-init=""
@@ -38,6 +43,11 @@ const CTA = () => {
                     >
                       Contact Us
                     </button>
+                    <input
+                      type="hidden"
+                      name="CTA"
+                      value="Call_to_action"
+                    />
                   </form>
                 </div>
               </div>
