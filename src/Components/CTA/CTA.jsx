@@ -14,6 +14,8 @@ const CTA = () => {
                   <form
                     className="text-center"
                     netlify
+                    netlify-honeypot="bot-field"
+                    hidden
                     name="CTA"
                     method="post"
                   >
@@ -43,11 +45,7 @@ const CTA = () => {
                     >
                       Contact Us
                     </button>
-                    <input
-                      type="hidden"
-                      name="CTA"
-                      value="Call_to_action"
-                    />
+                    <input type="hidden" name="CTA" value="Call_to_action" />
                   </form>
                 </div>
               </div>
