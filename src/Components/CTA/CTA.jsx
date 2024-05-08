@@ -1,16 +1,25 @@
 
 import { useState } from "react";
-import TextArea from "../Inputs/TextArea";
 import "./CTA.css"
 const CTA = () => {
 
-  const [fname,lname,email]=useState("");
+  const [inputs,setInputs]=useState({})
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputs((prevInputs) => ({
+      ...prevInputs,
+      [name]: value,
+    }));
+  };
+
+
   const handleSubmit=(e)=>{
 
      fetch("/", {
        method: "POST",
        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-       body: encode({ "form-name": "contact",fname,lname,email  }),
+       body: encode({ "form-name": "contact", ...inputs}),
      })
        .then(() => alert("Success!"))
        .catch((error) => alert(error));
@@ -34,12 +43,12 @@ const CTA = () => {
               <div className="mb-12 lg:mb-0 col-span-2 max-w-7xl mx-auto  ">
                 <div className="block rounded-lg bg-white px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-800 md:px-12">
                   <form
+                    onSubmit={handleSubmit}
                     className="text-center"
                     data-netlify="true"
                     netlify-honeypot="bot-field"
                     name="CTA"
                     method="post"
-                    onSubmit="submit"
                   >
                     <div className="grid md:grid-cols-2 md:gap-6">
                       <input
@@ -47,12 +56,14 @@ const CTA = () => {
                         type="text"
                         placeholder="First name"
                         value={fname}
+                        onChange={handleChange}
                       />
                       <input
                         className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
                         type="text"
                         placeholder="Last Name"
                         value={lname}
+                        onChange={handleChange}
                       />
                     </div>
                     <input
@@ -60,10 +71,23 @@ const CTA = () => {
                       type="email"
                       placeholder="Email address"
                       value={email}
+                      onChange={handleChange}
                     />
-                    <TextArea />
+                    <div
+                      className="relative mb-6"
+                      data-te-input-wrapper-init=""
+                    >
+                      <textarea
+                        className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
+                        id="exampleFormControlTextarea1"
+                        rows={3}
+                        placeholder="Your message"
+                        defaultValue={""}
+                        value={comments}
+                        onChange={handleChange}
+                      />
+                    </div>
                     <button
-                      onSubmit={handleSubmit}
                       type="submit"
                       data-te-ripple-init=""
                       data-te-ripple-color="light"
