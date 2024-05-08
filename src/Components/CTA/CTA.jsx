@@ -57,6 +57,7 @@ const CTA = () => {
                         placeholder="First name"
                         value={inputs.fname || ""}
                         onChange={handleChange}
+                        name="fname"
                       />
                       <input
                         className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
@@ -64,6 +65,7 @@ const CTA = () => {
                         placeholder="Last Name"
                         value={inputs.lname || ""}
                         onChange={handleChange}
+                        name="lname"
                       />
                     </div>
                     <input
@@ -72,6 +74,7 @@ const CTA = () => {
                       placeholder="Email address"
                       value={inputs.email || ""}
                       onChange={handleChange}
+                      name="email"
                     />
                     <div
                       className="relative mb-6"
@@ -82,9 +85,9 @@ const CTA = () => {
                         id="exampleFormControlTextarea1"
                         rows={3}
                         placeholder="Your message"
-                        defaultValue={""}
                         value={inputs.comments || ""}
                         onChange={handleChange}
+                        name="comments"
                       />
                     </div>
                     <button
