@@ -1,8 +1,10 @@
 
+import { useState } from "react";
 import InputField from "../Inputs/InputField";
 import TextArea from "../Inputs/TextArea";
 import "./CTA.css"
 const CTA = () => {
+
   return (
     <>
       <div className="container  my-24 mx-auto md:px-6 ">
@@ -13,31 +15,32 @@ const CTA = () => {
                 <div className="block rounded-lg bg-white px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-800 md:px-12">
                   <form
                     className="text-center"
-                    data-netlify='true'
+                    data-netlify="true"
                     netlify-honeypot="bot-field"
                     name="CTA"
                     method="post"
                     onSubmit="submit"
                   >
                     <div className="grid md:grid-cols-2 md:gap-6">
-                      <InputField
-                        type={"text"}
-                        label={"First name"}
-                        placeholder={"First name"}
+                      <input
+                        className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
+                        type="text"
+                        placeholder="First name"
                       />
-                      <InputField
-                        type={"text"}
-                        label={"Last name"}
-                        placeholder={"Last name"}
+                      <input
+                        className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
+                        type="text"
+                        placeholder="Last Name"
                       />
                     </div>
-                    <InputField
-                      type={"email"}
-                      label={"Email address"}
-                      placeholder={"Email address"}
+                    <input
+                      className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
+                      type="email"
+                      placeholder="Email address"
                     />
                     <TextArea />
                     <button
+                      onSubmit={handleSubmit}
                       type="submit"
                       data-te-ripple-init=""
                       data-te-ripple-color="light"
