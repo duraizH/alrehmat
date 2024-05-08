@@ -16,6 +16,11 @@ import {
 } from "@material-tailwind/react";
 import { UsersIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
+import work1 from "../../assets/work/d1.jpg"
+import work2 from "../../assets/work/d2.jpg";
+import work3 from "../../assets/work/d3.jpg";
+import work4 from "../../assets/work/d4.jpg";
+import work5 from "../../assets/work/d5.jpg";
 const autoplayOptions = {
   delay: 4000,
   rootNode: (emblaRoot) => emblaRoot.parentElement,
@@ -27,7 +32,7 @@ const Work = () => {
      Autoplay(autoplayOptions),
    ]);
   return (
-    <div className="work-container  grid grid-cols-2 gap-3 mt-32 lg:max-w-[1400px] md:max-w-[600px]  sm:max-w-[500px] max-w-[400px] mx-auto  md:mx-auto md:mt-20 sm:mx-auto">
+    <div className="work-container  grid grid-cols-2 gap-3 mt-32 xl:max-w-[1400px]  lg:max-w-[1000px] md:max-w-[600px]  sm:max-w-[300px]  mx-auto  md:mx-auto md:mt-20 sm:mx-auto">
       <div className="work-text-container  px-10 lg:col-span-1 md:col-span-2 col-span-2">
         <div className="mx-auto mt-8 w-full lg:px-20 sm:px-10">
           <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg">
@@ -68,21 +73,35 @@ const Work = () => {
             <div className="embla__slide">
               <img
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
-                src={work}
+                src={work1}
                 alt="Al Rehmat is trusted"
               />
             </div>
             <div className="embla__slide">
               <img
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
-                src={work}
+                src={work2}
                 alt="Al-Rehmat Developers"
               />
             </div>
             <div className="embla__slide">
               <img
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
-                src={work}
+                src={work3}
+                alt="Al-Rehmat Developers"
+              />
+            </div>
+            <div className="embla__slide">
+              <img
+                style={{ height: "100%", width: "100%", objectFit: "cover" }}
+                src={work4}
+                alt="Al-Rehmat Developers"
+              />
+            </div>
+            <div className="embla__slide">
+              <img
+                style={{ height: "100%", width: "100%", objectFit: "cover" }}
+                src={work5}
                 alt="Al-Rehmat Developers"
               />
             </div>
