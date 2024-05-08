@@ -21,7 +21,7 @@ const CTA = () => {
        headers: { "Content-Type": "application/x-www-form-urlencoded" },
        body: encode({ "form-name": "contact", ...inputs}),
      })
-       .then(() => alert("Success!"))
+       .then(() => alert("Form Submitted"))
        .catch((error) => alert(error));
 
      e.preventDefault();
