@@ -15,7 +15,6 @@ const CTA = () => {
                     className="text-center"
                     netlify
                     netlify-honeypot="bot-field"
-                    hidden
                     name="CTA"
                     method="post"
                   >
