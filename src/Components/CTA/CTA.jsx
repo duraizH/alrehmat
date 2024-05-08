@@ -55,14 +55,14 @@ const CTA = () => {
                         className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
                         type="text"
                         placeholder="First name"
-                        value={fname}
+                        value={inputs.fname || ""}
                         onChange={handleChange}
                       />
                       <input
                         className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
                         type="text"
                         placeholder="Last Name"
-                        value={lname}
+                        value={inputs.lname || ""}
                         onChange={handleChange}
                       />
                     </div>
@@ -70,7 +70,7 @@ const CTA = () => {
                       className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
                       type="email"
                       placeholder="Email address"
-                      value={email}
+                      value={inputs.email || ""}
                       onChange={handleChange}
                     />
                     <div
@@ -83,7 +83,7 @@ const CTA = () => {
                         rows={3}
                         placeholder="Your message"
                         defaultValue={""}
-                        value={comments}
+                        value={inputs.comments || ""}
                         onChange={handleChange}
                       />
                     </div>
