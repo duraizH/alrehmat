@@ -11,7 +11,7 @@ const DealersRegistration = () => {
         <meta name="description" content="Dealers Registration Al Rehmat Developers" />
       </Helmet>
       <DealersDetails />
-      <DealerContactForm />
+      {/* <DealerContactForm /> */}
     </>
   );
 }
