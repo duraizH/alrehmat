@@ -2,9 +2,38 @@ import InputField from "../Inputs/InputField";
 import TextArea from "../Inputs/TextArea";
 import g3 from "../../assets/g3.jpg";
 import { Helmet } from "react-helmet";
+import { useState } from "react";
 
 
  const ContactForm = () => {
+    const [inputs, setInputs] = useState({});
+
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setInputs((prevInputs) => ({
+        ...prevInputs,
+        [name]: value,
+      }));
+    };
+
+    const handleSubmit = (e) => {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...inputs }),
+      })
+        .then(() => alert("Form Submitted"))
+        .catch((error) => alert(error));
+
+      e.preventDefault();
+    };
+    const encode = (data) => {
+      return Object.keys(data)
+        .map(
+          (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
+        .join("&");
+    };
   return (
     <>
       <Helmet>
@@ -21,27 +50,63 @@ import { Helmet } from "react-helmet";
             <div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]">
               <div className="flex flex-wrap-reverse">
                 <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
-                  <form>
-                    <InputField
-                      type={"text"}
-                      label={"Name"}
-                      placeholder={"Name"}
+                  <form
+                    onSubmit={handleSubmit}
+                    className="text-center"
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                    name="CTA"
+                    method="post"
+                  >
+                    <div className="grid md:grid-cols-2 md:gap-6">
+                      <input
+                        className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
+                        type="text"
+                        placeholder="First name"
+                        value={inputs.fname || ""}
+                        onChange={handleChange}
+                        name="fname"
+                      />
+                      <input
+                        className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
+                        type="text"
+                        placeholder="Last Name"
+                        value={inputs.lname || ""}
+                        onChange={handleChange}
+                        name="lname"
+                      />
+                    </div>
+                    <input
+                      className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
+                      type="email"
+                      placeholder="Email address"
+                      value={inputs.email || ""}
+                      onChange={handleChange}
+                      name="email"
                     />
-                    <InputField
-                      type={"email"}
-                      label={"Email address"}
-                      placeholder={"Email address"}
-                    />
-                    <TextArea />
-
+                    <div
+                      className="relative mb-6"
+                      data-te-input-wrapper-init=""
+                    >
+                      <textarea
+                        className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
+                        id="exampleFormControlTextarea1"
+                        rows={3}
+                        placeholder="Your message"
+                        value={inputs.comments || ""}
+                        onChange={handleChange}
+                        name="comments"
+                      />
+                    </div>
                     <button
                       type="submit"
                       data-te-ripple-init=""
                       data-te-ripple-color="light"
-                      className="mb-6 inline-block w-full rounded bg-[#CBA664] px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] lg:mb-0"
+                      className="max-w-xs   mb-6 inline-block w-full rounded bg-[#CBA664] px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                     >
-                      Send
+                      Contact Us
                     </button>
+                    <input type="hidden" name="CTA" value="Call_to_action" />
                   </form>
                 </div>
                 <div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
