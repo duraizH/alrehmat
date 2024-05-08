@@ -13,10 +13,11 @@ const CTA = () => {
                 <div className="block rounded-lg bg-white px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-800 md:px-12">
                   <form
                     className="text-center"
-                    netlify
+                    data-netlify='true'
                     netlify-honeypot="bot-field"
                     name="CTA"
                     method="post"
+                    onSubmit="submit"
                   >
                     <div className="grid md:grid-cols-2 md:gap-6">
                       <InputField
