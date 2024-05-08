@@ -1,9 +1,29 @@
 
 import { useState } from "react";
-import InputField from "../Inputs/InputField";
 import TextArea from "../Inputs/TextArea";
 import "./CTA.css"
 const CTA = () => {
+
+  const [fname,lname,email]=useState("");
+  const handleSubmit=(e)=>{
+
+     fetch("/", {
+       method: "POST",
+       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+       body: encode({ "form-name": "contact",fname,lname,email  }),
+     })
+       .then(() => alert("Success!"))
+       .catch((error) => alert(error));
+
+     e.preventDefault();
+  }
+    const encode = (data) => {
+      return Object.keys(data)
+        .map(
+          (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
+        .join("&");
+    };
 
   return (
     <>
@@ -26,17 +46,20 @@ const CTA = () => {
                         className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
                         type="text"
                         placeholder="First name"
+                        value={fname}
                       />
                       <input
                         className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
                         type="text"
                         placeholder="Last Name"
+                        value={lname}
                       />
                     </div>
                     <input
                       className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
                       type="email"
                       placeholder="Email address"
+                      value={email}
                     />
                     <TextArea />
                     <button
