@@ -93,7 +93,7 @@ const CTA = () => {
                     <button
                     
                       onClick={() => {
-                        if (!inputs.fname || !inputs.lname || !inputs.email) {
+                        if (!inputs.fname || !inputs.lname || !inputs.email ||  !inputs.comments) {
                           alert("Please complete all the fields");
                         }else{
                            document.querySelector("form").submit();
