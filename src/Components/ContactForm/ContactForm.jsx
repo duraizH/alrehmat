@@ -47,7 +47,7 @@ import { useState } from "react";
             style={{ backgroundImage: `url(${g3})` }}
           />
           <div className="container px-6 md:px-12">
-            <div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]">
+            <div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]  dark:shadow-black/20 md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]">
               <div className="flex flex-wrap-reverse">
                 <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
                   <form
@@ -60,7 +60,7 @@ import { useState } from "react";
                   >
                     <div className="grid md:grid-cols-2 md:gap-6">
                       <input
-                        className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
+                        className="w-full bg-gray-100 text-black border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
                         type="text"
                         placeholder="First name"
                         value={inputs.fname || ""}
@@ -68,7 +68,7 @@ import { useState } from "react";
                         name="fname"
                       />
                       <input
-                        className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
+                        className="w-full bg-gray-100 text-black border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
                         type="text"
                         placeholder="Last Name"
                         value={inputs.lname || ""}
@@ -77,7 +77,7 @@ import { useState } from "react";
                       />
                     </div>
                     <input
-                      className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
+                      className="w-full bg-gray-100  text-black border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
                       type="email"
                       placeholder="Email address"
                       value={inputs.email || ""}
@@ -132,16 +132,16 @@ import { useState } from "react";
                           </div>
                         </div>
                         <div className="ml-6 grow">
-                          <p className="mb-2 font-bold dark:text-white">
+                          <p className="mb-2 font-bold dark:text-[#CBA664]">
                             Contact Details
                           </p>
-                          <p className="text-neutral-500 dark:text-neutral-200">
-                            info@alrehmatdevelopers.com
+                          <p className="text-black text-xl dark:text-black">
+                            alrehmatdev@gmail.com
                           </p>
-                          <p className="text-neutral-500 dark:text-neutral-200">
+                          <p className="text-black text-xl  dark:text-black ">
                             +92 42 37339430
                           </p>
-                          <p className="text-neutral-500 dark:text-neutral-200">
+                          <p className="text-black text-xl dark:text-black">
                             +92 321 030 1786
                           </p>
                         </div>
@@ -163,18 +163,18 @@ import { useState } from "react";
                           </div>
                         </div>
                         <div className="ml-6 grow">
-                          <p className="mb-2 font-bold dark:text-white">
+                          <p className="mb-2 font-bold dark:text-[#CBA664]">
                             Address
                           </p>
                           <ul className=" list-disc space-y-5">
                             <li>
-                              <p className="text-neutral-500 dark:text-neutral-200">
+                              <p className="text-black text-xl">
                                 Residencia Near Millat Tractor Ltd, 8km
                                 Sheikhupura road Lahore, Punjab, Pakistan-54000
                               </p>
                             </li>
                             <li>
-                              <p className="text-neutral-500 dark:text-neutral-200">
+                              <p className="text-black text-xl">
                                 50-D, Block D Opf Housing Scheme, Lahore,
                                 Punjab, Pakistan
                               </p>
