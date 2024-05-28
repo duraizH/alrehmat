@@ -9,9 +9,9 @@ import ProjectsCarousal from '../Components/ProjectsCarousal/ProjectsCarousal';
 import { Helmet } from 'react-helmet';
 
 const Home = () => {
-     useEffect(() => {
-       ReactGA.pageview(window.location.pathname + window.location.search);
-     }, []);
+    //  useEffect(() => {
+    //    ReactGA.pageview(window.location.pathname + window.location.search);
+    //  }, []);
   return (
     <>
       <Helmet>

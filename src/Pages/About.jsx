@@ -4,9 +4,9 @@ import Aboutbanners from "../Components/Aboutbanners/Aboutbanners"
 
 
 const About = () => {
-    useEffect(() => {
-      ReactGA.pageview(window.location.pathname + window.location.search);
-    }, []);
+    // useEffect(() => {
+    //   ReactGA.pageview(window.location.pathname + window.location.search);
+    // }, []);
   return (
        <Aboutbanners/>
     

@@ -13,9 +13,9 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const Projects = () => {
-     useEffect(() => {
-       ReactGA.pageview(window.location.pathname + window.location.search);
-     }, []);
+    //  useEffect(() => {
+    //    ReactGA.pageview(window.location.pathname + window.location.search);
+    //  }, []);
   return (
     <>
       <Helmet>

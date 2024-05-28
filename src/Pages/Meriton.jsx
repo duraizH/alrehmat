@@ -9,9 +9,9 @@ import { MeritonInterior } from "../Components/MeritonInterior/MeritonInterior";
 import MeritonOverView from "../Components/MeritonOverView/MeritonOverView";
 
 const Meriton = () => {
-     useEffect(() => {
-       ReactGA.pageview(window.location.pathname + window.location.search);
-     }, []);
+    //  useEffect(() => {
+    //    ReactGA.pageview(window.location.pathname + window.location.search);
+    //  }, []);
   return (
     <>
       <Helmet>
