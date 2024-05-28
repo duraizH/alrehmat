@@ -1,4 +1,6 @@
 // import ShowCase from "../Components/ShowCase/ShowCase";
+import { useEffect } from "react";
+import ReactGA from "react-ga4";
 import {al_rehmat_residencie_description} from "../Data/projectData.js"
 import res from "../assets/residencia.webp";
 import mer from "../assets/meriton.webp";
@@ -11,6 +13,9 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const Projects = () => {
+     useEffect(() => {
+       ReactGA.pageview(window.location.pathname + window.location.search);
+     }, []);
   return (
     <>
       <Helmet>

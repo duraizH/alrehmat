@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import ReactGA from "react-ga4";
 import { Helmet } from "react-helmet";
 import { Suspense } from "react";
 import MeritonAmeneties from "../Components/MeritonAmeneties/MeritonAmeneties";
@@ -6,8 +8,10 @@ import MeritonFormula from "../Components/MeritonFormula/MeritonFormula";
 import { MeritonInterior } from "../Components/MeritonInterior/MeritonInterior";
 import MeritonOverView from "../Components/MeritonOverView/MeritonOverView";
 
-
 const Meriton = () => {
+     useEffect(() => {
+       ReactGA.pageview(window.location.pathname + window.location.search);
+     }, []);
   return (
     <>
       <Helmet>
@@ -27,6 +31,6 @@ const Meriton = () => {
       </Suspense>
     </>
   );
-}
+};
 
 export default Meriton;

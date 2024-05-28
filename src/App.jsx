@@ -13,7 +13,17 @@ import { useEffect } from "react";
 import { WhatsAppWidget } from "react-whatsapp-widget";
 import "react-whatsapp-widget/dist/index.css";
 import { Helmet } from "react-helmet";
+import ReactGA from "react-ga4";
+
+const TRACKING_ID = "G-111B6N0MNE";
+ReactGA.initialize(TRACKING_ID);
+
+
 function App() {
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   function ScrollToTop() {
     const { pathname } = useLocation();

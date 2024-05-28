@@ -1,4 +1,6 @@
 // eslint-disable-next-line no-unused-vars
+import { useEffect } from "react";
+import ReactGA from "react-ga4";
 import React from 'react'
 import Hero from '../Components/Hero/Hero';
 import Work from '../Components/Work/Work';
@@ -7,6 +9,9 @@ import ProjectsCarousal from '../Components/ProjectsCarousal/ProjectsCarousal';
 import { Helmet } from 'react-helmet';
 
 const Home = () => {
+     useEffect(() => {
+       ReactGA.pageview(window.location.pathname + window.location.search);
+     }, []);
   return (
     <>
       <Helmet>
