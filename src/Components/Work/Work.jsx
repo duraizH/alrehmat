@@ -62,7 +62,10 @@ const Work = () => {
             substantial returns but contribute to the creation of iconic
             landmarks.
           </Typography>
-          <Link to="/about">
+          <Link
+            to="/about"
+            title="Learn more about Al-Rehmat Developers"
+          >
             <Button variant="outlined">read more</Button>
           </Link>
         </div>

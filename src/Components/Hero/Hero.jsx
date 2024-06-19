@@ -23,6 +23,7 @@ const Hero = () => {
               data-te-ripple-color="light"
               role="button"
               to="/about"
+              title='Learn more about Al-Rehmat Developers'
             >
               Learn More
             </Link>
