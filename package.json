@@ -33,7 +33,8 @@
     "react-snap": "^1.23.0",
     "react-svg": "^16.1.29",
     "react-whatsapp-widget": "^2.2.0",
-    "sass": "^1.69.5"
+    "sass": "^1.69.5",
+    "tailwindcss-animated": "^1.1.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

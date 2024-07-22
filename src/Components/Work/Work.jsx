@@ -1,18 +1,11 @@
 
-import work from "../../assets/working-housing.jpg"
 import useEmblaCarousel from "embla-carousel-react";
 
 import "./Work.css";
 import Autoplay from "embla-carousel-autoplay";
 import {
-  Card,
-  CardBody,
-  CardHeader,
   Typography,
   Button,
-  IconButton,
-  Input,
-  Textarea,
 } from "@material-tailwind/react";
 import { UsersIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";

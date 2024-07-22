@@ -14,6 +14,7 @@ import { WhatsAppWidget } from "react-whatsapp-widget";
 import "react-whatsapp-widget/dist/index.css";
 import { Helmet } from "react-helmet";
 import ReactGA from "react-ga4";
+import RoyalResidenciaPage from "./Pages/RoyalResidencia";
 
 const TRACKING_ID = "G-111B6N0MNE";
 ReactGA.initialize(TRACKING_ID);
@@ -55,6 +56,10 @@ function App() {
           <Route path="/registration" element={<DealersRegistration />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/meriton" element={<Meriton />} />
+          <Route
+            path="/projects/royal-residencia"
+            element={<RoyalResidenciaPage />}
+          />
           <Route path="*" element={<Home />} />
         </Routes>
         <Footer />

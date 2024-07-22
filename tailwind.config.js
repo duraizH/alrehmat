@@ -33,5 +33,5 @@ export default /** @type {import('tailwindcss').Config} */ {
       black: '900',
     }
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require('tailwindcss-animated')],
 };
