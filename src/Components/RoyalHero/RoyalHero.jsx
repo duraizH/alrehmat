@@ -3,7 +3,7 @@ import { Link as ScrollLink } from "react-scroll";
 
 const   RoyalHero = () => {
   return (
-    <section className="w-full pt-12 md:pt-24 lg:pt-32">
+    <section className="w-full  md:pt-24 lg:pt-32 pt-[6rem]">
       <div className="container space-y-10 xl:space-y-16">
         <div className="grid gap-4 px-10 md:grid-cols-2 md:gap-16">
           <div className="animate-fade-right animate-once animate-ease-in animate-fill-forwards">
