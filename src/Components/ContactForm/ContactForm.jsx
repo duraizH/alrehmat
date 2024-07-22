@@ -40,7 +40,7 @@ import { useState } from "react";
         <title>Contact Al-Rehmat</title>
         <meta name="description" content="Contact Al Rehmat Developers" />
       </Helmet>
-      <div className="container my-24 mx-auto md:px-6">
+      <div className="container my-24 mx-auto md:px-6" id="Contact-form">
         <section className="mb-32">
           <div
             className="relative h-[300px] overflow-hidden bg-cover bg-[50%] bg-no-repeat "
