@@ -1,6 +1,4 @@
-
-import { Link } from "react-router-dom";
-import royal1 from "../../assets/royal-residencia/royal1.png";
+import royal1 from "../../assets/royal-residencia/royal1.webp";
 import { Link as ScrollLink } from "react-scroll";
 
 const   RoyalHero = () => {
@@ -27,12 +25,12 @@ const   RoyalHero = () => {
             </p>
             <ScrollLink
               style={{ backgroundColor: "#CBA664", color: "white" }}
-              to="Contact-form"
+              to="plot-section"
               smooth={true}
               duration={500}
               className=" cursor-pointer  hover:animate-wiggle-more hover:animate-infinite hover:animate-ease-in-out  inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors  focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50  duration-300 "
             >
-              Explore Homes
+              Explore Plots
             </ScrollLink>
           </div>
         </div>

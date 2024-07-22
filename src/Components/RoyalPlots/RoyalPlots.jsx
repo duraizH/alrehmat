@@ -1,6 +1,5 @@
 
-import { Link } from "react-router-dom";
-import Plot from "../../assets/royal-residencia/royalPlot.png";
+import Plot from "../../assets/royal-residencia/royalPlot.webp";
 import PlotCard from "../PlotCard/PlotCard";
 import { plots } from "../../Data/plots";
 
@@ -14,6 +13,7 @@ const RoyalPlots = () => {
               <div
                 style={{ color: "black" }}
                 className="inline-block rounded-lg bg-muted px-3 py-1 text-sm"
+                id="plot-section"
               >
                 Our Plots
               </div>
@@ -40,7 +40,7 @@ const RoyalPlots = () => {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3">
-            {plots.map((plot)=>{
+            {plots.map((plot) => {
               return (
                 <PlotCard
                   key={plot.heading}
@@ -50,7 +50,6 @@ const RoyalPlots = () => {
                 />
               );
             })}
-    
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 
-import royal2 from "../../assets/royal-residencia/royal2.png"
-import royal3 from "../../assets/royal-residencia/royal3.png";
+import royal2 from "../../assets/royal-residencia/royal2.webp"
+import royal3 from "../../assets/royal-residencia/royal3.webp";
 const RoyalLuxury = () => {
   return (
     <section className="w-full py-12 md:py-24 lg:py-26">
@@ -41,6 +41,7 @@ const RoyalLuxury = () => {
           </div>
           <div className="grid gap-4">
             <img
+              loading="lazy"
               src={royal3}
               width="550"
               height="310"
@@ -48,6 +49,7 @@ const RoyalLuxury = () => {
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full hover:animate-rotate-x animate-once cursor-pointer animate-ease-in animate-fill-forwards"
             />
             <img
+              loading="lazy"
               src={royal2}
               width="550"
               height="310"
