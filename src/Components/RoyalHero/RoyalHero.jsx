@@ -28,7 +28,7 @@ const RoyalHero = () => {
 							className="animate-fade-up animate-once animate-ease-in animate-fill-forwards"
 						>
 							<img
-								src={`/src/assets/royal-residencia/royalImages/${img}`}
+								src={`/royal/royalImages/${img}`}
 								alt={`Royal Image ${index + 1}`}
 								className="mx-auto aspect-[3/1] overflow-hidden rounded-t-xl object-scale-down"
 							/>
