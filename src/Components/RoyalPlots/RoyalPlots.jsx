@@ -1,4 +1,3 @@
-
 import Plot from "../../assets/royal-residencia/royalPlot.webp";
 import PlotCard from "../PlotCard/PlotCard";
 import { plots } from "../../Data/plots";
@@ -6,7 +5,7 @@ import { plots } from "../../Data/plots";
 const RoyalPlots = () => {
   return (
     <>
-      <section className="w-full py-12 md:py-24 lg:py-26 bg-muted">
+      <section className=" flex justify-center w-full py-12 md:py-24 lg:py-26 bg-muted">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
             <div className="space-y-2">
@@ -55,6 +54,6 @@ const RoyalPlots = () => {
       </section>
     </>
   );
-}
+};
 
-export default RoyalPlots
+export default RoyalPlots;

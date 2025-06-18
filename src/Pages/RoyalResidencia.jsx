@@ -22,7 +22,7 @@ const RoyalResidenciaPage = () => {
           <span className="loading loading-spinner text-warning"></span>
         }
       >
-        <div className="flex flex-col min-h-[100dvh] container bg-[#ECE3D4]">
+        <div className="flex flex-col min-h-[100dvh]  mx-auto bg-[#ECE3D4]">
           <RoyalHero />
           <RoyalLuxury />
           <RoyalPlots />

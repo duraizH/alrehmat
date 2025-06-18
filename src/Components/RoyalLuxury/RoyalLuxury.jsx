@@ -1,9 +1,8 @@
-
-import royal2 from "../../assets/royal-residencia/royal2.webp"
+import royal2 from "../../assets/royal-residencia/royal2.webp";
 import royal3 from "../../assets/royal-residencia/royal3.webp";
 const RoyalLuxury = () => {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-26">
+    <section className="w-full flex justify-center py-12 md:py-24 lg:py-26">
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
           <div>
@@ -61,6 +60,6 @@ const RoyalLuxury = () => {
       </div>
     </section>
   );
-}
+};
 
-export default RoyalLuxury
+export default RoyalLuxury;

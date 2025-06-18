@@ -1,10 +1,10 @@
 import AmenetiesCard from "../AmenetiesCard/AmenetiesCard";
-import {ameneties} from "../../Data/ameneties"
+import { ameneties } from "../../Data/ameneties";
 
 const RoyalAmeneties = () => {
   return (
     <>
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      <section className=" flex justify-center w-full py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -35,21 +35,20 @@ const RoyalAmeneties = () => {
             style={{ color: "black" }}
             className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 mt-20"
           >
-            {ameneties.map((amenety)=>{
-            return (
-              <AmenetiesCard
-                key={amenety.title}
-                heading={amenety.title}
-                description={amenety.description}
-              />
-            );
+            {ameneties.map((amenety) => {
+              return (
+                <AmenetiesCard
+                  key={amenety.title}
+                  heading={amenety.title}
+                  description={amenety.description}
+                />
+              );
             })}
-         
           </div>
         </div>
       </section>
     </>
   );
-}
+};
 
-export default RoyalAmeneties
+export default RoyalAmeneties;

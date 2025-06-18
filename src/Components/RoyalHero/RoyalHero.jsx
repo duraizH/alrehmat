@@ -1,9 +1,9 @@
 import royal1 from "../../assets/royal-residencia/royal1.webp";
 import { Link as ScrollLink } from "react-scroll";
 
-const   RoyalHero = () => {
+const RoyalHero = () => {
   return (
-    <section className="w-full  md:pt-24 lg:pt-32 pt-[6rem]">
+    <section className="w-full flex justify-center  md:pt-24 lg:pt-32 pt-[6rem]">
       <div className="container space-y-10 xl:space-y-16">
         <div className="grid gap-4 px-10 md:grid-cols-2 md:gap-16">
           <div className="animate-fade-right animate-once animate-ease-in animate-fill-forwards">
@@ -44,6 +44,6 @@ const   RoyalHero = () => {
       </div>
     </section>
   );
-}
+};
 
-export default RoyalHero
+export default RoyalHero;
