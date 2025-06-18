@@ -1,11 +1,42 @@
-import royal1 from "../../assets/royal-residencia/royal1.webp";
-import { Link as ScrollLink } from "react-scroll";
+const imageFiles = [
+	"Al Rehmat Residencia (2)_page-0001.jpg",
+	"Al Rehmat Residencia (2)_page-0002.jpg",
+	"Al Rehmat Residencia (2)_page-0003.jpg",
+	"Al Rehmat Residencia (2)_page-0004.jpg",
+	"Al Rehmat Residencia (2)_page-0005.jpg",
+	"Al Rehmat Residencia (2)_page-0006.jpg",
+	"Al Rehmat Residencia (2)_page-0007.jpg",
+	"Al Rehmat Residencia (2)_page-0008.jpg",
+	"Al Rehmat Residencia (2)_page-0009.jpg",
+	"Al Rehmat Residencia (2)_page-0010.jpg",
+	"Al Rehmat Residencia (2)_page-0011.jpg",
+	"Al Rehmat Residencia (2)_page-0012.jpg",
+	"Al Rehmat Residencia (2)_page-0013.jpg",
+	"Al Rehmat Residencia (2)_page-0014.jpg",
+	"Al Rehmat Residencia (2)_page-0015.jpg",
+	"Al Rehmat Residencia (2)_page-0016.jpg",
+]
 
 const RoyalHero = () => {
-  return (
-    <section className="w-full flex justify-center  md:pt-24 lg:pt-32 pt-[6rem]">
-      <div className="container space-y-10 xl:space-y-16">
-        <div className="grid gap-4 px-10 md:grid-cols-2 md:gap-16">
+	return (
+		<section className="w-full flex justify-center  md:pt-24 lg:pt-32 pt-[6rem]">
+			<div className="container space-y-10 xl:space-y-16">
+				<div className="flex flex-col items-center justify-evenly">
+					{imageFiles.map((img, index) => (
+						<div
+							key={index}
+							className="animate-fade-up animate-once animate-ease-in animate-fill-forwards"
+						>
+							<img
+								src={`/src/assets/royal-residencia/royalImages/${img}`}
+								alt={`Royal Image ${index + 1}`}
+								className="mx-auto aspect-[3/1] overflow-hidden rounded-t-xl object-scale-down"
+							/>
+						</div>
+					))}
+				</div>
+
+				{/* <div className="grid gap-4 px-10 md:grid-cols-2 md:gap-16">
           <div className="animate-fade-right animate-once animate-ease-in animate-fill-forwards">
             <h1
               style={{ color: "black" }}
@@ -40,10 +71,10 @@ const RoyalHero = () => {
           height="500"
           alt="Hero"
           className="mx-auto aspect-[3/1] overflow-hidden rounded-t-xl object-cover animate-fade-up animate-once animate-ease-in animate-fill-forwards"
-        />
-      </div>
-    </section>
-  );
-};
+        /> */}
+			</div>
+		</section>
+	)
+}
 
-export default RoyalHero;
+export default RoyalHero
