@@ -19,6 +19,7 @@
     "@material-tailwind/react": "^2.1.4",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.492",
+    "emailjs-com": "^3.2.0",
     "embla-carousel-auto-height": "^8.0.0-rc14",
     "embla-carousel-autoplay": "^8.0.0-rc14",
     "embla-carousel-react": "^8.0.0-rc14",
@@ -26,6 +27,7 @@
     "gsap": "^3.12.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-confetti": "^6.4.0",
     "react-dom": "^18.2.0",
     "react-ga4": "^2.1.0",
     "react-helmet": "^6.1.0",
@@ -33,6 +35,7 @@
     "react-scroll": "^1.9.0",
     "react-snap": "^1.23.0",
     "react-svg": "^16.1.29",
+    "react-use": "^17.6.0",
     "react-whatsapp-widget": "^2.2.0",
     "sass": "^1.69.5",
     "tailwindcss-animated": "^1.1.2"

@@ -1,12 +1,17 @@
-import InputField from "../Inputs/InputField";
-import TextArea from "../Inputs/TextArea";
 import g3 from "../../assets/g3.jpg";
 import { Helmet } from "react-helmet";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "emailjs-com";
+import { useWindowSize } from 'react-use'
+import Confetti from 'react-confetti'
+
 
 
  const ContactForm = () => {
+    const { width, height } = useWindowSize()
     const [inputs, setInputs] = useState({});
+      const [showConfetti, setShowConfetti] = useState(false);
+    const formRef = useRef();
 
     const handleChange = (e) => {
       const { name, value } = e.target;
@@ -16,30 +21,61 @@ import { useState } from "react";
       }));
     };
 
-    const handleSubmit = (e) => {
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", ...inputs }),
-      })
-        .then(() => alert("Form Submitted"))
-        .catch((error) => alert(error));
+   const handleSubmit = (e) => {
+    e.preventDefault();
 
-      e.preventDefault();
-    };
-    const encode = (data) => {
-      return Object.keys(data)
-        .map(
-          (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-        )
-        .join("&");
-    };
+    emailjs
+      .sendForm(
+        "service_lyphnfb", // 🔹 Replace with your EmailJS service ID
+        "template_k62rwr6", // 🔹 Replace with your EmailJS template ID
+        formRef.current,
+        "J_USET3TKmretVKY3" // 🔹 Replace with your EmailJS public key
+      )
+      .then(
+        () => {
+ setShowConfetti(true);       // 👈 Show confetti now!
+    setInputs({});               // clear form
+
+    // Hide confetti after 5 seconds
+    setTimeout(() => setShowConfetti(false), 10000);
+        },
+        (error) => {
+          console.error("Error:", error.text);
+          alert("Failed to send message. Please try again.");
+        }
+      );
+  };
+
   return (
     <>
       <Helmet>
         <title>Contact Al-Rehmat</title>
         <meta name="description" content="Contact Al Rehmat Developers" />
       </Helmet>
+            {showConfetti && (
+  <>
+    <Confetti width={width} height={height} />
+    <div
+      style={{
+        position: 'fixed',
+        top: '20%',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        backgroundColor: '#CBA664',
+        color: '#fff',
+        padding: '15px 30px',
+        borderRadius: '10px',
+        fontSize: '18px',
+        fontWeight: 'bold',
+        zIndex: 9999,
+        boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
+        textAlign: 'center',
+      }}
+    >
+      🎉 Message Sent Successfully! 🎉
+    </div>
+  </>
+)}
       <div className="container my-24 mx-auto md:px-6" id="Contact-form">
         <section className="mb-32">
           <div
@@ -50,13 +86,10 @@ import { useState } from "react";
             <div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]  dark:shadow-black/20 md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]">
               <div className="flex flex-wrap-reverse">
                 <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
-                  <form
+                        <form
+                    ref={formRef}
                     onSubmit={handleSubmit}
                     className="text-center"
-                    data-netlify="true"
-                    netlify-honeypot="bot-field"
-                    name="CTA"
-                    method="post"
                   >
                     <div className="grid md:grid-cols-2 md:gap-6">
                       <input
@@ -66,6 +99,7 @@ import { useState } from "react";
                         value={inputs.fname || ""}
                         onChange={handleChange}
                         name="fname"
+                        required
                       />
                       <input
                         className="w-full bg-gray-100 text-black border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
@@ -74,6 +108,7 @@ import { useState } from "react";
                         value={inputs.lname || ""}
                         onChange={handleChange}
                         name="lname"
+                        required
                       />
                     </div>
                     <input
@@ -83,30 +118,25 @@ import { useState } from "react";
                       value={inputs.email || ""}
                       onChange={handleChange}
                       name="email"
+                      required
                     />
-                    <div
-                      className="relative mb-6"
-                      data-te-input-wrapper-init=""
-                    >
+                    <div className="relative mb-6">
                       <textarea
                         className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
-                        id="exampleFormControlTextarea1"
                         rows={3}
                         placeholder="Your message"
                         value={inputs.comments || ""}
                         onChange={handleChange}
                         name="comments"
+                        required
                       />
                     </div>
                     <button
                       type="submit"
-                      data-te-ripple-init=""
-                      data-te-ripple-color="light"
-                      className="max-w-xs   mb-6 inline-block w-full rounded bg-[#CBA664] px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                      className="max-w-xs mb-6 inline-block w-full rounded bg-[#CBA664] px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-[#b08d55] focus:outline-none focus:ring-2 focus:ring-[#CBA664] focus:ring-offset-2"
                     >
                       Contact Us
                     </button>
-                    <input type="hidden" name="CTA" value="Call_to_action" />
                   </form>
                 </div>
                 <div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
