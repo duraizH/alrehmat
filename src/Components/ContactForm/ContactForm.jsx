@@ -11,6 +11,7 @@ import Confetti from 'react-confetti'
     const { width, height } = useWindowSize()
     const [inputs, setInputs] = useState({});
       const [showConfetti, setShowConfetti] = useState(false);
+            const [sending, setSending] = useState(false);
     const formRef = useRef();
 
     const handleChange = (e) => {
@@ -23,6 +24,7 @@ import Confetti from 'react-confetti'
 
    const handleSubmit = (e) => {
     e.preventDefault();
+         setSending(true);
 
     emailjs
       .sendForm(
@@ -35,7 +37,7 @@ import Confetti from 'react-confetti'
         () => {
  setShowConfetti(true);       // 👈 Show confetti now!
     setInputs({});               // clear form
-
+setSending(false);   
     // Hide confetti after 5 seconds
     setTimeout(() => setShowConfetti(false), 10000);
         },
@@ -132,6 +134,7 @@ import Confetti from 'react-confetti'
                       />
                     </div>
                     <button
+                        disabled={sending}
                       type="submit"
                       className="max-w-xs mb-6 inline-block w-full rounded bg-[#CBA664] px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-[#b08d55] focus:outline-none focus:ring-2 focus:ring-[#CBA664] focus:ring-offset-2"
                     >
