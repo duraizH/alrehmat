@@ -1,24 +1,25 @@
-import { useEffect } from "react";
-import ReactGA from "react-ga4";
 import { Helmet } from "react-helmet";
-import DealerContactForm from "../Components/DealerContactForm/DealerContactForm";
 import DealersDetails from "../Components/DealersDetails/DealersDetails";
 
 const DealersRegistration = () => {
-    //  useEffect(() => {
-    //    ReactGA.pageview(window.location.pathname + window.location.search);
-    //  }, []);
   return (
     <>
       <Helmet>
-        <title>Dealers Registration Al-Rehmat</title>
+        <title>Dealer Registration - Al-Rehmat Developers | Partner With Us</title>
         <meta
           name="description"
-          content="Dealers Registration Al Rehmat Developers"
+          content="Become a dealer partner with Al-Rehmat Developers. Join our network of dealers for premium housing projects in Lahore. Register now for exclusive opportunities."
         />
+        <meta property="og:title" content="Dealer Registration - Al-Rehmat Developers" />
+        <meta property="og:description" content="Register as a dealer partner with Al-Rehmat Developers for premium housing projects." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://alrehmatdevelopers.com/registration" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Dealer Registration - Al-Rehmat Developers" />
+        <meta name="twitter:description" content="Become a dealer partner with Al-Rehmat Developers." />
+        <link rel="canonical" href="https://alrehmatdevelopers.com/registration" />
       </Helmet>
       <DealersDetails />
-      {/* <DealerContactForm /> */}
     </>
   );
 };

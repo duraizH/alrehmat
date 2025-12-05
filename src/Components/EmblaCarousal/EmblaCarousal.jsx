@@ -47,7 +47,7 @@ const EmblaCarousel = (props) => {
         <div className="embla__container">
           {slides.map((index) => (
             <LazyLoadImage
-              key={index}
+              key={`slide-${index}`}
               index={index}
               imgSrc={imageByIndex(index)}
               inView={slidesInView.indexOf(index) > -1}

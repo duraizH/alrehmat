@@ -24,7 +24,7 @@ const RoyalHero = () => {
 				<div className="flex flex-col items-center justify-evenly">
 					{imageFiles.map((img, index) => (
 						<div
-							key={index}
+							key={`royal-${img}-${index}`}
 							className="animate-fade-up animate-once animate-ease-in animate-fill-forwards"
 						>
 							<img

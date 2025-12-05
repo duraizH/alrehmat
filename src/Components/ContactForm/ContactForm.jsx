@@ -24,35 +24,64 @@ import Confetti from 'react-confetti'
 
    const handleSubmit = (e) => {
     e.preventDefault();
-         setSending(true);
+    setSending(true);
 
-    emailjs
-      .sendForm(
-        "service_lyphnfb", // 🔹 Replace with your EmailJS service ID
-        "template_k62rwr6", // 🔹 Replace with your EmailJS template ID
-        formRef.current,
-        "J_USET3TKmretVKY3" // 🔹 Replace with your EmailJS public key
-      )
-      .then(
-        () => {
- setShowConfetti(true);       // 👈 Show confetti now!
-    setInputs({});               // clear form
-setSending(false);   
-    // Hide confetti after 5 seconds
-    setTimeout(() => setShowConfetti(false), 10000);
-        },
-        (error) => {
-          console.error("Error:", error.text);
-          alert("Failed to send message. Please try again.");
-        }
-      );
+    // Validate form before submission
+    if (!inputs.fname || !inputs.lname || !inputs.email || !inputs.comments) {
+      alert("Please fill in all fields");
+      setSending(false);
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(inputs.email)) {
+      alert("Please enter a valid email address");
+      setSending(false);
+      return;
+    }
+
+    try {
+      emailjs
+        .sendForm(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          formRef.current,
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        )
+        .then(
+          () => {
+            setShowConfetti(true);
+            setInputs({});
+            setSending(false);
+            setTimeout(() => setShowConfetti(false), 10000);
+          },
+          (error) => {
+            console.error("Error:", error.text);
+            alert("Failed to send message. Please try again.");
+            setSending(false);
+          }
+        );
+    } catch (err) {
+      console.error("Submission error:", err);
+      alert("An error occurred. Please try again later.");
+      setSending(false);
+    }
   };
 
   return (
     <>
       <Helmet>
-        <title>Contact Al-Rehmat</title>
-        <meta name="description" content="Contact Al Rehmat Developers" />
+        <title>Contact Al-Rehmat Developers - Get In Touch</title>
+        <meta name="description" content="Contact Al-Rehmat Developers for luxury residential projects. Reach our team via phone, email, or contact form. Offices in Lahore, Pakistan." />
+        <meta property="og:title" content="Contact Al-Rehmat Developers - Get In Touch" />
+        <meta property="og:description" content="Contact Al-Rehmat Developers for luxury residential projects. Reach our team via phone, email, or contact form." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://alrehmatdevelopers.com/contact" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Al-Rehmat Developers" />
+        <meta name="twitter:description" content="Contact Al-Rehmat Developers for luxury residential projects in Lahore." />
+        <link rel="canonical" href="https://alrehmatdevelopers.com/contact" />
       </Helmet>
             {showConfetti && (
   <>

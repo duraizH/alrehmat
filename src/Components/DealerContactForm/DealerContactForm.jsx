@@ -1,31 +1,137 @@
 
+import { useState, useRef } from "react";
+import emailjs from "emailjs-com";
 import InputField from "../Inputs/InputField";
 import TextArea from "../Inputs/TextArea";
 
 
 const DealerContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  const [sending, setSending] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+  const formRef = useRef();
+
+  const handleNameChange = (value) => {
+    setFormData(prev => ({ ...prev, name: value }));
+  };
+
+  const handleEmailChange = (value) => {
+    setFormData(prev => ({ ...prev, email: value }));
+  };
+
+  const handleMessageChange = (value) => {
+    setFormData(prev => ({ ...prev, message: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSending(true);
+    setSubmitMessage("");
+
+    // Validate form
+    if (!formData.name || !formData.email || !formData.message) {
+      setSubmitMessage("Please fill in all fields");
+      setSending(false);
+      return;
+    }
+
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitMessage("Please enter a valid email address");
+      setSending(false);
+      return;
+    }
+
+    try {
+      const templateData = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        subject: "Dealer Registration Inquiry"
+      };
+
+      emailjs
+        .send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          templateData,
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        )
+        .then(
+          () => {
+            setSubmitMessage("✓ Registration inquiry sent successfully!");
+            setFormData({ name: "", email: "", message: "" });
+            setSending(false);
+            setTimeout(() => setSubmitMessage(""), 5000);
+          },
+          (error) => {
+            console.error("Email error:", error);
+            setSubmitMessage("Failed to send inquiry. Please try again.");
+            setSending(false);
+          }
+        );
+    } catch (err) {
+      console.error("Submission error:", err);
+      setSubmitMessage("An error occurred. Please try again later.");
+      setSending(false);
+    }
+  };
+
   return (
-    <section className="relative bg-white mt-40   mb-20 ">
-      <div className="container px-6 md:px-12  mx-auto">
+    <section className="relative bg-white mt-40 mb-20">
+      <div className="container px-6 md:px-12 mx-auto">
         <div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]">
           <div className="flex flex-wrap">
             <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
-              <form>
-                <InputField type={"text"} label={"Name"} placeholder={"Name"} />
-                <InputField
-                  type={"email"}
-                  label={"Email address"}
-                  placeholder={"Email address"}
+              <form ref={formRef} onSubmit={handleSubmit}>
+                <InputField 
+                  type="text" 
+                  label="Full Name" 
+                  placeholder="Enter your full name"
+                  value={formData.name}
+                  onChange={handleNameChange}
+                  required
                 />
-                <TextArea />
+                <InputField
+                  type="email"
+                  label="Email Address"
+                  placeholder="your.email@example.com"
+                  value={formData.email}
+                  onChange={handleEmailChange}
+                  required
+                />
+                <TextArea 
+                  label="Message"
+                  placeholder="Tell us about your dealer inquiry..."
+                  value={formData.message}
+                  onChange={handleMessageChange}
+                  required
+                  rows={4}
+                />
+
+                {submitMessage && (
+                  <div className={`p-3 rounded-md text-sm mb-4 ${
+                    submitMessage.includes("✓") 
+                      ? "bg-green-100 text-green-800" 
+                      : "bg-red-100 text-red-800"
+                  }`}>
+                    {submitMessage}
+                  </div>
+                )}
 
                 <button
-                  type="button"
+                  type="submit"
+                  disabled={sending}
                   data-te-ripple-init=""
                   data-te-ripple-color="light"
-                  className="mb-6 inline-block w-full rounded bg-[#CBA664] px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] lg:mb-0"
+                  className="mb-6 inline-block w-full rounded bg-[#CBA664] px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] lg:mb-0 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send
+                  {sending ? "Sending..." : "Send"}
                 </button>
               </form>
             </div>
@@ -74,7 +180,7 @@ const DealerContactForm = () => {
                       <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          fill="#CBA664" // Set the fill color to the hexadecimal value
+                          fill="#CBA664"
                           viewBox="0 0 24 24"
                           className="h-6 w-6"
                         >

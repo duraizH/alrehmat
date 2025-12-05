@@ -70,35 +70,40 @@ const Work = () => {
               <img
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
                 src={work1}
-                alt="Al Rehmat is trusted"
+                alt="Al-Rehmat developers construction project showcase"
+                loading="lazy"
               />
             </div>
             <div className="embla__slide">
               <img
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
                 src={work2}
-                alt="Al-Rehmat Developers"
+                alt="Al-Rehmat luxury housing development"
+                loading="lazy"
               />
             </div>
             <div className="embla__slide">
               <img
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
                 src={work3}
-                alt="Al-Rehmat Developers"
+                alt="Al-Rehmat residential construction project"
+                loading="lazy"
               />
             </div>
             <div className="embla__slide">
               <img
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
                 src={work4}
-                alt="Al-Rehmat Developers"
+                alt="Al-Rehmat modern architecture design"
+                loading="lazy"
               />
             </div>
             <div className="embla__slide">
               <img
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
                 src={work5}
-                alt="Al-Rehmat Developers"
+                alt="Al-Rehmat property development portfolio"
+                loading="lazy"
               />
             </div>
           </div>

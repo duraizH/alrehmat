@@ -5,19 +5,10 @@ const Card = ({ imgsrcTitle, imgsrcModel, imgsrcCover }) => {
   return (
     <div className="cardCustom ">
       <div className="wrapper">
-        {/* <img
-            src="https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg"
-            class="cover-image"
-          /> */}
-        <img src={imgsrcCover} className="cover-image" />
+        <img src={imgsrcCover} className="cover-image" alt="Project cover" loading="lazy" />
       </div>
-      {/* <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" /> */}
-      <img src={imgsrcTitle} className="title" />
-      {/* <img
-          src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.webp"
-          class="character"
-        /> */}
-      <img src={imgsrcModel} className="character" />
+      {imgsrcTitle && <img src={imgsrcTitle} className="title" alt="Project title" loading="lazy" />}
+      <img src={imgsrcModel} className="character" alt="Project model" loading="lazy" />
     </div>
   );
 };

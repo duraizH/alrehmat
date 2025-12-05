@@ -8,35 +8,34 @@ import DealersRegistration from "./Pages/DealersRegistration"
 import Home from "./Pages/Home"
 import Meriton from "./Pages/Meriton"
 import Projects from "./Pages/Projects"
-// import { ReactComponent as CompanyIcon } from "./assets/CompanySVG";
 import ReactGA from "react-ga4"
 import { Helmet } from "react-helmet"
 import { WhatsAppWidget } from "react-whatsapp-widget"
 import "react-whatsapp-widget/dist/index.css"
 import RoyalResidenciaPage from "./Pages/RoyalResidencia"
+import NotFound from "./Pages/NotFound"
 
 const TRACKING_ID = "G-111B6N0MNE"
 ReactGA.initialize(TRACKING_ID)
 
 function App() {
-	// useEffect(() => {
-	//   ReactGA.pageview(window.location.pathname + window.location.search);
-	// }, []);
-
 	function ScrollToTop() {
 		const { pathname } = useLocation()
 
 		useEffect(() => {
 			window.scrollTo(0, 0)
+			// Track page views with GA4
+			ReactGA.send({ hitType: "pageview", page: pathname, title: document.title })
 		}, [pathname])
 
 		return null
 	}
+
 	return (
 		<>
 			<Helmet>
 				<meta charSet="utf-8" />
-				<title>Al Rehmat Developers</title>
+				<title>Al Rehmat Developers - Luxury Housing Projects</title>
 				<meta
 					name="google-site-verification"
 					content="ZaamaPju4b_YQslADdx5QhirEtNsrkxE8IGpPmEEHpE"
@@ -57,7 +56,7 @@ function App() {
 						path="/projects/alrehmat-residencia"
 						element={<RoyalResidenciaPage />}
 					/>
-					<Route path="*" element={<Home />} />
+					<Route path="*" element={<NotFound />} />
 				</Routes>
 				<Footer />
 			</BrowserRouter>

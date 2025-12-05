@@ -8,15 +8,15 @@ const MeritonFormula = () => {
       <div className="grid xl:grid-cols-12 container mx-auto my-20 ">
         <div className="xl:col-span-7 px-10 md:col-span-12">
         
-          <img  className="w-full" src={meritonbuilding} alt="Meriton Building Al Rehmat" />
+          <img className="w-full" src={meritonbuilding} alt="Meriton luxury apartments building exterior Al-Rehmat Lahore" loading="lazy" />
       
         </div>
         <div className="xl:col-span-5 md:col-span-12 ">
-          <img className="w-full" src={meriton5} alt="" />
+          <img className="w-full" src={meriton5} alt="Meriton apartments project logo" loading="lazy" />
           <div className="text-center px-20 space-y-6">
-            <h1 className="  text-[#CBA664] text-4xl my-4  ">
+            <h2 className="text-[#CBA664] text-4xl my-4">
               Winning Formula <br /> Meriton Apartments
-            </h1>
+            </h2>
             <p>
               Our apartments are designed to make life easier, more comfortable
               and more convenient, both inside and out. To complement a healthy,

@@ -1,13 +1,26 @@
 
 
- const InputField = (props) => {
+const InputField = ({ type, placeholder, label, value, onChange, required }) => {
+  const handleChange = (e) => {
+    if (onChange) {
+      onChange(e.target.value);
+    }
+  };
+
   return (
     <div className="relative mb-6" data-te-input-wrapper-init="">
+      {label && (
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          {label}
+        </label>
+      )}
       <input
-        type={props.type}
+        type={type}
         className="w-full bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200/80 focus:outline-none focus:ring-1 focus:ring-[#CBA664] transition ease-in-out duration-150"
-        id="exampleInput90"
-        placeholder={props.placeholder}
+        placeholder={placeholder}
+        value={value}
+        onChange={handleChange}
+        required={required}
       />
     </div>
   );
