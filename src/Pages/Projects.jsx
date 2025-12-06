@@ -22,14 +22,14 @@ const Projects = () => {
 				<meta name="twitter:description" content="Explore premium residential projects: Meriton and Royal Residencia." />
 				<link rel="canonical" href="https://alrehmatdevelopers.com/projects" />
 			</Helmet>
-			<section className="my-20">
-				<div className=" mx-auto grid container grid-cols-2 max-w-[1000px] justify-items-center align-baseline ">
-					<div className=" col-span-1">
+			<section className="my-20 px-4">
+				<div className="mx-auto grid container grid-cols-1 md:grid-cols-2 max-w-[1000px] justify-items-center align-baseline gap-8">
+					<div className="w-full flex justify-center">
 						<Link to={`/projects/meriton`}>
 							<Card imgsrcModel={meritonModel} imgsrcCover={meritonCover} />
 						</Link>
 					</div>
-					<div className=" col-span-1">
+					<div className="w-full flex justify-center">
 						<Link to={`/projects/alrehmat-residencia`}>
 							<Card imgsrcModel={cardRoyal} imgsrcCover={cardRoyalBg} />
 						</Link>
