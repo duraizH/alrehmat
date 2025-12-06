@@ -115,8 +115,8 @@ import Confetti from 'react-confetti'
           />
           <div className="container px-6 md:px-12">
             <div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]  dark:shadow-black/20 md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]">
-              <div className="flex flex-wrap-reverse">
-                <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
+              <div className="flex flex-col-reverse lg:flex-row lg:flex-wrap-reverse">
+                <div className="mb-12 w-full shrink-0 grow-0 basis-auto lg:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
                         <form
                     ref={formRef}
                     onSubmit={handleSubmit}
@@ -172,8 +172,8 @@ import Confetti from 'react-confetti'
                   </form>
                 </div>
                 <div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
-                  <div className="flex flex-wrap">
-                    <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:w-6/12">
+                  <div className="flex flex-col lg:flex-wrap">
+                    <div className="mb-12 w-full shrink-0 grow-0 basis-auto lg:w-1/2">
                       <div className="flex items-start">
                         <div className="shrink-0">
                           <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
@@ -210,7 +210,7 @@ import Confetti from 'react-confetti'
                       </div>
                     </div>
 
-                    <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12">
+                    <div className="mb-12 w-full shrink-0 grow-0 basis-auto lg:w-1/2">
                       <div className="align-start flex">
                         <div className="shrink-0">
                           <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
