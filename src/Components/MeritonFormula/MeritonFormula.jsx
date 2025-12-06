@@ -13,7 +13,7 @@ const MeritonFormula = () => {
         </div>
         <div className="xl:col-span-5 md:col-span-12 ">
           <img className="w-full" src={meriton5} alt="Meriton apartments project logo" loading="lazy" />
-          <div className="text-center px-20 space-y-6">
+          <div className="text-center px-6 lg:px-10 space-y-6">
             <h2 className="text-[#CBA664] text-4xl my-4">
               Winning Formula <br /> Meriton Apartments
             </h2>

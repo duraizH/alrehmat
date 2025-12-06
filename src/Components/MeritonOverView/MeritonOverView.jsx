@@ -16,8 +16,8 @@ const MeritonOverView = () => {
         <img src={meriton4} alt="Meriton Apartments Al-Rehmat Developers" />
         <img src={meriton5} alt="Meriton Apartments Al-Rehmat Developers" />
         <div className="container mx-auto lg:px-32 md:px-10 px-4 ">
-          <div className="grid lg:grid-cols-3 md:grid-cols-6">
-            <div className=" lg:col-span-3 md:col-span-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3">
+            <div className="md:col-span-2 lg:col-span-3">
               <h1 className="  text-[#CBA664] text-4xl my-4  ">
                 About the Project
               </h1>
@@ -72,7 +72,7 @@ const MeritonOverView = () => {
               }
             />
 
-            <div className="lg:col-span-2 md:col-span-3 px-2 pt-20 md:pt-20">
+            <div className="md:col-span-2 lg:col-span-2 px-2 pt-20 md:pt-20">
               <p>
                 Overall, MERITON HEIGHTS appears to offer a combination of
                 luxury, convenience, and accessibility, making it an attractive

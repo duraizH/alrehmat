@@ -20,7 +20,7 @@ const imageFiles = [
 const RoyalHero = () => {
 	return (
 		<section className="w-full flex justify-center  md:pt-24 lg:pt-32 pt-[6rem]">
-			<div className="container space-y-10 xl:space-y-16">
+			<div className="w-full space-y-10 xl:space-y-16">
 				<div className="flex flex-col items-center justify-evenly">
 					{imageFiles.map((img, index) => (
 						<div
