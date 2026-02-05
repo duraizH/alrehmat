@@ -164,17 +164,17 @@ setSending(false);
                             </svg>
                           </div>
                         </div>
-                        <div className="ml-6 grow">
+                        <div className="ml-6 grow min-w-0">
                           <p className="mb-2 font-bold dark:text-[#CBA664]">
                             Contact Details
                           </p>
-                          <p className="text-black text-base sm:text-xl dark:text-black">
+                          <p className="text-black text-sm sm:text-base md:text-lg dark:text-black break-words">
                             alrehmatdev@gmail.com
                           </p>
-                          <p className="text-black text-base sm:text-xl  dark:text-black ">
+                          <p className="text-black text-sm sm:text-base md:text-lg  dark:text-black break-words">
                             +92 42 37339430
                           </p>
-                          <p className="text-black text-base sm:text-xl dark:text-black">
+                          <p className="text-black text-sm sm:text-base md:text-lg dark:text-black break-words">
                             +92 321 030 1786
                           </p>
                         </div>

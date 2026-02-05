@@ -16,21 +16,15 @@ const Projects = () => {
 				<title>Projects Al-Rehmat</title>
 				<meta name="description" content="Projects Al Rehmat Developers" />
 			</Helmet>
-			<section className="my-12 sm:my-20">
-				<div className="mx-auto grid container grid-cols-1 md:grid-cols-2 gap-8 max-w-[1000px] justify-items-center align-baseline px-4 sm:px-6">
-					<div className="col-span-1 w-full flex justify-center">
-						<Link
-							to={`/projects/meriton`}
-							className="w-full flex justify-center max-w-[420px] sm:max-w-none"
-						>
+			<section className="w-full h-[calc(100vh-400px)] md:h-[calc(100vh-80px)] flex items-center justify-center bg-white px-4 sm:px-6 overflow-hidden">
+				<div className="mx-auto grid grid-cols-1 sm:grid-cols-2 max-w-[1200px] gap-4 sm:gap-6 md:gap-8 justify-items-center w-full">
+					<div className=" col-span-1">
+						<Link to={`/projects/meriton`}>
 							<Card imgsrcModel={meritonModel} imgsrcCover={meritonCover} />
 						</Link>
 					</div>
-					<div className="col-span-1 w-full flex justify-center">
-						<Link
-							to={`/projects/alrehmat-residencia`}
-							className="w-full flex justify-center max-w-[420px] sm:max-w-none"
-						>
+					<div className=" col-span-1">
+						<Link to={`/projects/alrehmat-residencia`}>
 							<Card imgsrcModel={cardRoyal} imgsrcCover={cardRoyalBg} />
 						</Link>
 					</div>
