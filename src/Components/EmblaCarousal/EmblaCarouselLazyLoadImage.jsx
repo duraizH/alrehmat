@@ -27,6 +27,8 @@ export const LazyLoadImage = (props) => {
           src={inView ? imgSrc : PLACEHOLDER_SRC}
           alt="Project Portfolio Al Rehmat"
           data-src={imgSrc}
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </div>

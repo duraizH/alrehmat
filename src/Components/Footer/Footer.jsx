@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <footer className="footer footer-center p-10  text-base-content rounded">
-      <nav className="grid grid-flow-col gap-4">
+      <nav className="grid grid-flow-row sm:grid-flow-col gap-4">
         <Link to="/about" className="link link-hover">
           About us
         </Link>
@@ -29,6 +29,7 @@ const Footer = () => {
           <a
             href="https://www.instagram.com/al.rehmat.tm?igsh=MjQ4MXZyaDR5dWxs"
             target="_blank"
+            rel="noreferrer"
           >
             <FontAwesomeIcon
               icon={faInstagram}
@@ -37,7 +38,11 @@ const Footer = () => {
               style={{ color: "#cba664" }}
             />
           </a>
-          <a href="https://www.facebook.com/alrehmatdeveloper" target="_blank">
+          <a
+            href="https://www.facebook.com/alrehmatdeveloper"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FontAwesomeIcon
               icon={faFacebook}
               bounce
@@ -58,11 +63,12 @@ const Footer = () => {
       </nav>
       <aside>
         <p>
-          Copyright © {currentYear} - All right reserved by{" "}
+          Copyright (c) {currentYear} - All right reserved by{" "}
           <a
             className="link link-hover"
             href="https://www.facebook.com/alrehmatdeveloper"
             target="_blank"
+            rel="noreferrer"
           >
             Al-Rehmat Developers
           </a>
@@ -83,3 +89,4 @@ const Footer = () => {
   );
 }
 export default Footer;
+

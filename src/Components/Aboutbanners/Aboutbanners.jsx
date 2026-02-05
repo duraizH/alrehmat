@@ -25,9 +25,9 @@ const Aboutbanners = () => {
         <meta name="description" content="About Al Rehmat Developers" />
       </Helmet>
       <section className="relative bg-white ">
-        <div className="container mx-auto">
-          <div className="container text-center mx-auto">
-            <h1 className="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="container text-center mx-auto px-4 sm:px-6">
+            <h1 className="mt-2 mb-10 sm:mb-16 text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight">
               <br />
               <span className=" text-[#CBA664] ">Why Choose Us</span>
             </h1>
@@ -54,7 +54,7 @@ const Aboutbanners = () => {
               you to return to and enjoy time and time again.
             </p>
           </PageTitle>
-          <div className="mx-auto mt-20 mb-48 grid max-w-5xl grid-cols-1 gap-16">
+          <div className="mx-auto mt-12 sm:mt-20 mb-24 sm:mb-48 grid max-w-5xl grid-cols-1 gap-12 sm:gap-16">
             <AboutCard
               img={experience}
               heading={"Protecting our People"}

@@ -25,9 +25,9 @@ const Work = () => {
      Autoplay(autoplayOptions),
    ]);
   return (
-    <div className="work-container  grid grid-cols-2 gap-3 mt-32 xl:max-w-[1400px]  lg:max-w-[1000px] md:max-w-[600px]  sm:max-w-[300px]  mx-auto  md:mx-auto md:mt-20 sm:mx-auto">
-      <div className="work-text-container  px-10 lg:col-span-1 md:col-span-2 col-span-2">
-        <div className="mx-auto mt-8 w-full lg:px-20 sm:px-10">
+    <div className="work-container grid grid-cols-1 lg:grid-cols-2 gap-6 mt-20 md:mt-24 xl:max-w-[1200px] lg:max-w-[1000px] md:max-w-[700px] w-full mx-auto px-4 sm:px-6">
+      <div className="work-text-container lg:col-span-1">
+        <div className="mx-auto mt-4 w-full px-2 sm:px-4 lg:px-12">
           <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg">
             <UsersIcon className="h-6 w-6  text-[#CBA664] " />
           </div>
@@ -38,7 +38,7 @@ const Work = () => {
           >
             Working with us is a pleasure
           </Typography>
-          <Typography className="mb-8 lg:text-base sm:text-sm font-normal font-arvo text-blue-gray-500">
+          <Typography className="mb-8 text-sm sm:text-base lg:text-base font-normal font-arvo text-blue-gray-500">
             Al Rehmat Developers is more than a construction company; we are the
             architects of possibilities. With a legacy of excellence in the
             construction industry, we have established ourselves as visionaries
@@ -63,7 +63,7 @@ const Work = () => {
           </Link>
         </div>
       </div>
-      <div className="carousal-container  px-10 lg:col-span-1 md:justify-center md:mt-20 md:col-span-2 md:px-10 col-span-2 sm:px-10">
+      <div className="carousal-container lg:col-span-1 md:justify-center md:mt-12 px-2 sm:px-4">
         <div className="embla" ref={emblaRef}>
           <div className="embla__container">
             <div className="embla__slide">
@@ -71,6 +71,8 @@ const Work = () => {
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
                 src={work1}
                 alt="Al Rehmat is trusted"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="embla__slide">
@@ -78,6 +80,8 @@ const Work = () => {
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
                 src={work2}
                 alt="Al-Rehmat Developers"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="embla__slide">
@@ -85,6 +89,8 @@ const Work = () => {
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
                 src={work3}
                 alt="Al-Rehmat Developers"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="embla__slide">
@@ -92,6 +98,8 @@ const Work = () => {
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
                 src={work4}
                 alt="Al-Rehmat Developers"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="embla__slide">
@@ -99,6 +107,8 @@ const Work = () => {
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
                 src={work5}
                 alt="Al-Rehmat Developers"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

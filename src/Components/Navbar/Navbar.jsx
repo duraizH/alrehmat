@@ -14,7 +14,6 @@ const Navbar = () => {
          document.documentElement.scrollTop ||
          0;
        setIsScrolled(scrollPosition > 0);
-       setIsScrolled(scrollPosition > 0);
      };
 
      window.addEventListener("scroll", handleScroll);
@@ -29,7 +28,7 @@ const Navbar = () => {
         isScrolled ? "bg-white shadow-md" : ""
       }`}
     >
-      <div className=" w-11/12 navbar-start md:w-3/6 ">
+      <div className="navbar-start w-full md:w-3/6 px-2">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -81,9 +80,11 @@ const Navbar = () => {
         </div>
         <Link to="/" className="">
           <img
-            className=" lg:w-96 md:w-56"
+            className="w-40 sm:w-48 md:w-56 lg:w-96"
             src={logo}
             alt="Al-Rehmat Developers"
+            loading="eager"
+            decoding="async"
           />
         </Link>
       </div>

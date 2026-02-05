@@ -4,4 +4,37 @@
 
 #root {
     background-color: white;
+    min-height: 100vh;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }

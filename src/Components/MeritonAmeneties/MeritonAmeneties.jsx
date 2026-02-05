@@ -16,7 +16,7 @@ const MeritonAmeneties = () => {
           "Located in bahira town Lahore",
           "Well planned layout",
           "Earthquake resistant",
-          "Top quality oorings",
+          "Top quality floorings",
           "Aluminum Windows with Glass",
           "Imported Tiles in Baths and Kitchens",
           "24 hours electric service",
@@ -28,12 +28,19 @@ const MeritonAmeneties = () => {
         ];
   return (
     <section>
-      <div className="container mx-auto space-y-16">
-        <img src={meriton5} alt="Meriton Al-Rehmat Al Rehmat" />
+      <div className="container mx-auto space-y-10 sm:space-y-16 px-4 sm:px-6">
+        <img
+          src={meriton5}
+          alt="Meriton Al-Rehmat Al Rehmat"
+          className="w-full max-w-[220px] mx-auto"
+          loading="lazy"
+          decoding="async"
+        />
         <Ameneties features={ameneties} heading={"Amenities"} />
         <Ameneties features={salientFeatures} heading={"Salient Features"} />
       </div>
     </section>
   );
 }
-export default MeritonAmeneties;;
+export default MeritonAmeneties;
+

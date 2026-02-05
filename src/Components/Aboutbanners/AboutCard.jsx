@@ -4,11 +4,17 @@ const AboutCard = (props) => {
   return (
     <div className="card w-full glass">
       <figure>
-        <img className="w-full" src={props.img} alt="construction experience" />
+        <img
+          className="w-full"
+          src={props.img}
+          alt="construction experience"
+          loading="lazy"
+          decoding="async"
+        />
       </figure>
       <div className="card-body">
         <h2 className="card-title text-[#CBA664]">{props.heading}</h2>
-        <p className="lg:text-xl sm:text-sm font-arvo text-black">{props.description}</p>
+        <p className="text-sm sm:text-base lg:text-xl font-arvo text-black">{props.description}</p>
       </div>
     </div>
   );

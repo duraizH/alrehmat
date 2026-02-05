@@ -11,6 +11,8 @@ const PlotCard = ({img,heading,description}) => {
         height="310"
         alt="Home Type 1"
         className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+        loading="lazy"
+        decoding="async"
       />
       <div className="space-y-2">
         <h3 className="text-xl font-bold">{heading}</h3>

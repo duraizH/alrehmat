@@ -10,15 +10,47 @@ const MeritonOverView = () => {
   return (
     <section>
       <div>
-        <img src={meriton1} alt="Meriton Apartments Al-Rehmat Developers" />
-        <img src={meriton2} alt="Meriton Apartments Al-Rehmat Developers" />
-        <img src={meriton3} alt="Meriton Apartments Al-Rehmat Developers" />
-        <img src={meriton4} alt="Meriton Apartments Al-Rehmat Developers" />
-        <img src={meriton5} alt="Meriton Apartments Al-Rehmat Developers" />
+        <div className="grid gap-4 px-4 sm:px-6 md:px-10 lg:px-16 py-6 sm:py-10 md:grid-cols-2 lg:grid-cols-3">
+          <img
+            src={meriton1}
+            alt="Meriton Apartments Al-Rehmat Developers"
+            className="w-full rounded-lg object-cover"
+            loading="eager"
+            decoding="async"
+          />
+          <img
+            src={meriton2}
+            alt="Meriton Apartments Al-Rehmat Developers"
+            className="w-full rounded-lg object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src={meriton3}
+            alt="Meriton Apartments Al-Rehmat Developers"
+            className="w-full rounded-lg object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src={meriton4}
+            alt="Meriton Apartments Al-Rehmat Developers"
+            className="w-full rounded-lg object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src={meriton5}
+            alt="Meriton Apartments Al-Rehmat Developers"
+            className="w-full rounded-lg object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
         <div className="container mx-auto lg:px-32 md:px-10 px-4 ">
-          <div className="grid lg:grid-cols-3 md:grid-cols-6">
-            <div className=" lg:col-span-3 md:col-span-6">
-              <h1 className="  text-[#CBA664] text-4xl my-4  ">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="lg:col-span-3 md:col-span-2">
+              <h1 className="text-[#CBA664] text-2xl sm:text-3xl lg:text-4xl my-4">
                 About the Project
               </h1>
               <p>
@@ -72,7 +104,7 @@ const MeritonOverView = () => {
               }
             />
 
-            <div className="lg:col-span-2 md:col-span-3 px-2 pt-20 md:pt-20">
+            <div className="lg:col-span-2 md:col-span-2 px-2 pt-8 md:pt-12">
               <p>
                 Overall, MERITON HEIGHTS appears to offer a combination of
                 luxury, convenience, and accessibility, making it an attractive

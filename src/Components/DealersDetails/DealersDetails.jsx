@@ -5,8 +5,8 @@ import CardDealers from "./CardDealers";
  const DealersDetails = () => {
   return (
     <section className="relative bg-white   mb-20 ">
-      <div className="container mx-auto">
-        <h1 className=" text-center mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
+      <div className="container mx-auto px-4 sm:px-6">
+        <h1 className=" text-center mt-2 mb-10 sm:mb-16 text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight">
           <br />
           <span className=" text-[#CBA664] ">Dealers Registration</span>
         </h1>
@@ -22,7 +22,7 @@ import CardDealers from "./CardDealers";
           </p>
         </PageTitle>
       </div>
-      <div className="mx-auto container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-4xl">
+      <div className="mx-auto container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-4xl px-4 sm:px-6">
         <CardDealers
           title={"Plot Sales"}
           description={

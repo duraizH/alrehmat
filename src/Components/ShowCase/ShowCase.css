@@ -183,3 +183,28 @@
 .project.project--hovered .project__image img {
   transform: scale(1.12);
 }
+
+@media (max-width: 640px) {
+  .projects {
+    row-gap: 32px;
+    margin: 0 12px;
+  }
+
+  .project {
+    cursor: pointer;
+  }
+
+  .project__title p {
+    font-size: 22px;
+  }
+}
+
+@media (hover: none) {
+  .cursor {
+    display: none;
+  }
+
+  .project {
+    cursor: pointer;
+  }
+}

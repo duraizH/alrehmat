@@ -6,7 +6,7 @@ const CardDealers = (props) => {
       <div className="card w-full  bg-[#CBA664] shadow-xl ">
         <div className="card-body">
           <h2 className="card-title text-white new">{props.title}</h2>
-          <p className="lg:text-xl sm:text-sm font-arvo text-black">{props.description}</p>
+          <p className="text-sm sm:text-base lg:text-xl font-arvo text-black">{props.description}</p>
         </div>
       </div>
     </>

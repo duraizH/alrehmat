@@ -5,8 +5,8 @@ import { plots } from "../../Data/plots";
 const RoyalPlots = () => {
   return (
     <>
-      <section className=" flex justify-center w-full py-12 md:py-24 lg:py-26 bg-muted">
-        <div className="container px-4 md:px-6">
+      <section className=" flex justify-center w-full py-10 sm:py-12 md:py-24 lg:py-26 bg-muted">
+        <div className="container px-4 sm:px-6 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
             <div className="space-y-2">
               <div
@@ -18,13 +18,13 @@ const RoyalPlots = () => {
               </div>
               <h2
                 style={{ color: "black" }}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter"
               >
                 Explore Our Diverse Plot Distribution
               </h2>
               <p
                 style={{ color: "black" }}
-                className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+                className="max-w-[900px] text-muted-foreground text-sm sm:text-base md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed"
               >
                 Our housing scheme offers a variety of plots to suit your
                 lifestyle and preferences. Whether you're looking to build a

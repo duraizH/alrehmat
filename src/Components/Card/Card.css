@@ -99,3 +99,16 @@
     opacity: 1;
     transform: translate3d(0%, -30%, 100px);
 }
+
+@media (max-width: 640px) {
+    .cardCustom {
+        width: 100%;
+        height: auto;
+        padding: 0 16px;
+        margin: 0;
+    }
+
+    .cover-image {
+        height: auto;
+    }
+}

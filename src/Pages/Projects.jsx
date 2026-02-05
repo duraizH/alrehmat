@@ -16,14 +16,14 @@ const Projects = () => {
 				<title>Projects Al-Rehmat</title>
 				<meta name="description" content="Projects Al Rehmat Developers" />
 			</Helmet>
-			<section className="my-20">
-				<div className=" mx-auto grid container grid-cols-2 max-w-[1000px] justify-items-center align-baseline ">
-					<div className=" col-span-1">
+			<section className="my-12 sm:my-20">
+				<div className="mx-auto grid container grid-cols-1 md:grid-cols-2 gap-8 max-w-[1000px] justify-items-center align-baseline px-4 sm:px-6">
+					<div className="col-span-1 w-full flex justify-center">
 						<Link to={`/projects/meriton`}>
 							<Card imgsrcModel={meritonModel} imgsrcCover={meritonCover} />
 						</Link>
 					</div>
-					<div className=" col-span-1">
+					<div className="col-span-1 w-full flex justify-center">
 						<Link to={`/projects/alrehmat-residencia`}>
 							<Card imgsrcModel={cardRoyal} imgsrcCover={cardRoyalBg} />
 						</Link>

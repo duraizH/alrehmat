@@ -19,23 +19,36 @@ import m13 from "../../assets/meritonwebp2/m13.webp";
 import m14 from "../../assets/meritonwebp2/m14.webp";
 
 export const MeritonInterior = () => {
+  const interiorImages = [
+    m1,
+    m2,
+    m3,
+    m4,
+    m5,
+    m6,
+    m7,
+    m8,
+    m9,
+    m10,
+    m11,
+    m12,
+    m13,
+    m14,
+  ];
+
   return (
     <>
-      <div>
-        <img className="w-full" src={m1} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={m2} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={m3} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={m4} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={m5} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={m6} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={m7} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={m8} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={m9} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={m10} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={m11} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={m12} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={m13} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={m14} alt="Meriton Interior Al-Rehmat" />
+      <div className="grid gap-4 px-4 sm:px-6 md:px-10 lg:px-16 py-6 sm:py-10 md:grid-cols-2 lg:grid-cols-3">
+        {interiorImages.map((img, index) => (
+          <img
+            key={img}
+            className="w-full rounded-lg object-cover"
+            src={img}
+            alt="Meriton Interior Al-Rehmat"
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding="async"
+          />
+        ))}
         {/* <img className="w-full" src={int2} alt="Meriton Interior Al-Rehmat" />
         <img className="w-full" src={int3} alt="Meriton Interior Al-Rehmat" />
         <img className="w-full" src={int4} alt="Meriton Interior Al-Rehmat" />

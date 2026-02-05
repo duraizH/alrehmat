@@ -78,14 +78,14 @@ setSending(false);
     </div>
   </>
 )}
-      <div className="container my-24 mx-auto md:px-6" id="Contact-form">
+      <div className="container my-16 sm:my-24 mx-auto px-4 md:px-6" id="Contact-form">
         <section className="mb-32">
           <div
             className="relative h-[300px] overflow-hidden bg-cover bg-[50%] bg-no-repeat "
             style={{ backgroundImage: `url(${g3})` }}
           />
-          <div className="container px-6 md:px-12">
-            <div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]  dark:shadow-black/20 md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]">
+          <div className="container px-4 sm:px-6 md:px-12">
+            <div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-4 sm:px-6 py-10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]  dark:shadow-black/20 md:py-16 md:px-12 -mt-[80px] sm:-mt-[100px] backdrop-blur-[30px]">
               <div className="flex flex-wrap-reverse">
                 <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
                         <form
@@ -168,13 +168,13 @@ setSending(false);
                           <p className="mb-2 font-bold dark:text-[#CBA664]">
                             Contact Details
                           </p>
-                          <p className="text-black text-xl dark:text-black">
+                          <p className="text-black text-base sm:text-xl dark:text-black">
                             alrehmatdev@gmail.com
                           </p>
-                          <p className="text-black text-xl  dark:text-black ">
+                          <p className="text-black text-base sm:text-xl  dark:text-black ">
                             +92 42 37339430
                           </p>
-                          <p className="text-black text-xl dark:text-black">
+                          <p className="text-black text-base sm:text-xl dark:text-black">
                             +92 321 030 1786
                           </p>
                         </div>
@@ -201,13 +201,13 @@ setSending(false);
                           </p>
                           <ul className=" list-disc space-y-5">
                             <li>
-                              <p className="text-black text-xl">
+                              <p className="text-black text-base sm:text-xl">
                                 Residencia Near Millat Tractor Ltd, 8km
                                 Sheikhupura road Lahore, Punjab, Pakistan-54000
                               </p>
                             </li>
                             <li>
-                              <p className="text-black text-xl">
+                              <p className="text-black text-base sm:text-xl">
                                 50-D, Block D Opf Housing Scheme, Lahore,
                                 Punjab, Pakistan
                               </p>

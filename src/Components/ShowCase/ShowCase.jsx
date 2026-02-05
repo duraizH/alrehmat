@@ -7,14 +7,21 @@ import { Link } from "react-router-dom";
 
 const ProjectShowcase = () => {
   useEffect(() => {
+    const supportsHover =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(hover: hover)").matches;
+
+    if (!supportsHover) return undefined;
+
     const runGsap = () => {
-      
       const projects = document.querySelectorAll(".project");
       const images = document.querySelectorAll(".p_img");
 
-      // Cursor
       const cursor = document.querySelector(".cursor__circle");
-      const cursorText = cursor.querySelector(".cursor__text p");
+      const cursorText = cursor?.querySelector(".cursor__text p");
+
+      if (!cursor || !cursorText) return;
 
       const moveCursor = (e) => {
         gsap.to(cursor, 0.3, {
@@ -47,29 +54,52 @@ const ProjectShowcase = () => {
         });
       });
 
+      const handlers = [];
       projects.forEach((currentProject) => {
         const title = currentProject.querySelector(".project__title");
-
-        currentProject.addEventListener("mouseover", () => {
+        const onMouseOver = () => {
           currentProject.classList.add("project--hovered");
-          activateCursor(title);
-        });
-
-        currentProject.addEventListener("mouseleave", () => {
+          if (title) activateCursor(title);
+        };
+        const onMouseLeave = () => {
           currentProject.classList.remove("project--hovered");
           cursor.classList.remove("cursor__circle--active");
           cursorText.innerText = "";
-        });
+        };
+
+        currentProject.addEventListener("mouseover", onMouseOver);
+        currentProject.addEventListener("mouseleave", onMouseLeave);
+        handlers.push({ currentProject, onMouseOver, onMouseLeave });
       });
 
       document.body.addEventListener("mousemove", moveCursor);
+
+      return () => {
+        document.body.removeEventListener("mousemove", moveCursor);
+        handlers.forEach(({ currentProject, onMouseOver, onMouseLeave }) => {
+          currentProject.removeEventListener("mouseover", onMouseOver);
+          currentProject.removeEventListener("mouseleave", onMouseLeave);
+        });
+      };
     };
 
+    let cleanup;
     if (document.readyState === "complete") {
-      runGsap();
+      cleanup = runGsap();
     } else {
-      window.addEventListener("load", runGsap);
+      const onLoad = () => {
+        cleanup = runGsap();
+      };
+      window.addEventListener("load", onLoad);
+      return () => {
+        window.removeEventListener("load", onLoad);
+        if (cleanup) cleanup();
+      };
     }
+
+    return () => {
+      if (cleanup) cleanup();
+    };
   }, []);
 
   return (
@@ -83,12 +113,14 @@ const ProjectShowcase = () => {
       </div>
 
       <div className="projects ">
-        <Link className="project">
+        <Link to="/projects/alrehmat-residencia" className="project">
           <figure className="project__image">
             <img
               className="p_img"
               src={royal}
               alt="Al Rehmat Royal Residencia"
+              loading="lazy"
+              decoding="async"
             />
           </figure>
           <div className="project__details">
@@ -96,7 +128,7 @@ const ProjectShowcase = () => {
               <p className="text-[#CBA664]">Al-Rehmat Royal Residencia</p>
             </div>
             <div className="project__description">
-              <p className=" text-black lg:text-xl sm:text-sm font-arvo">
+              <p className="text-black text-sm sm:text-base lg:text-xl font-arvo">
                 Al-Rehmat Royal Residencia is an excellent community that
                 provides affordable living in the most ideal location, it lies a
                 short 10-minute drive from Lahore District Court and a 2km drive
@@ -125,6 +157,8 @@ const ProjectShowcase = () => {
               src={meriton}
               alt="Meriton Bahria Town Al-Rehmat"
               className="w-100 p_img"
+              loading="lazy"
+              decoding="async"
             />
           </figure>
           <div className="project__details">
@@ -132,7 +166,7 @@ const ProjectShowcase = () => {
               <p>MERITON APARTMENTS</p>
             </div>
             <div className="project__description">
-              <p className=" text-black lg:text-xl sm:text-sm font-arvo">
+              <p className="text-black text-sm sm:text-base lg:text-xl font-arvo">
                 MERITON APARTMENTS offers an unrivalled luxury
                 commercial/residential experience within the beautiful location
                 of bahira town Lahore . It is located on main 100 feet road Maj

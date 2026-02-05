@@ -5,16 +5,28 @@ import meriton5 from "../../assets/meritonwebp/meritonlogocropped2.webp";
 const MeritonFormula = () => {
   return (
     <>
-      <div className="grid xl:grid-cols-12 container mx-auto my-20 ">
-        <div className="xl:col-span-7 px-10 md:col-span-12">
+      <div className="grid gap-8 xl:grid-cols-12 container mx-auto my-12 sm:my-20 px-4 sm:px-6">
+        <div className="xl:col-span-7 md:col-span-12">
         
-          <img  className="w-full" src={meritonbuilding} alt="Meriton Building Al Rehmat" />
+          <img
+            className="w-full rounded-lg"
+            src={meritonbuilding}
+            alt="Meriton Building Al Rehmat"
+            loading="lazy"
+            decoding="async"
+          />
       
         </div>
         <div className="xl:col-span-5 md:col-span-12 ">
-          <img className="w-full" src={meriton5} alt="" />
-          <div className="text-center px-20 space-y-6">
-            <h1 className="  text-[#CBA664] text-4xl my-4  ">
+          <img
+            className="w-full max-w-[220px] mx-auto"
+            src={meriton5}
+            alt="Meriton Apartments"
+            loading="lazy"
+            decoding="async"
+          />
+          <div className="text-center px-4 sm:px-8 lg:px-10 space-y-6">
+            <h1 className="text-[#CBA664] text-2xl sm:text-3xl lg:text-4xl my-4">
               Winning Formula <br /> Meriton Apartments
             </h1>
             <p>

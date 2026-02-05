@@ -20,7 +20,7 @@ const imageFiles = [
 const RoyalHero = () => {
 	return (
 		<section className="w-full flex justify-center  md:pt-24 lg:pt-32 pt-[6rem]">
-			<div className="container space-y-10 xl:space-y-16">
+			<div className="container space-y-10 xl:space-y-16 px-4 sm:px-6">
 				<div className="flex flex-col items-center justify-evenly">
 					{imageFiles.map((img, index) => (
 						<div
@@ -30,7 +30,9 @@ const RoyalHero = () => {
 							<img
 								src={`/royal/royalImages/${img}`}
 								alt={`Royal Image ${index + 1}`}
-								className="mx-auto aspect-[3/1] overflow-hidden rounded-t-xl object-scale-down"
+								className="mx-auto aspect-[4/3] sm:aspect-[3/1] overflow-hidden rounded-t-xl object-contain"
+								loading={index === 0 ? "eager" : "lazy"}
+								decoding="async"
 							/>
 						</div>
 					))}

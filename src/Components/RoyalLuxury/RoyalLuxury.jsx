@@ -2,8 +2,8 @@ import royal2 from "../../assets/royal-residencia/royal2.webp";
 import royal3 from "../../assets/royal-residencia/royal3.webp";
 const RoyalLuxury = () => {
   return (
-    <section className="w-full flex justify-center py-12 md:py-24 lg:py-26">
-      <div className="container px-4 md:px-6">
+    <section className="w-full flex justify-center py-10 sm:py-12 md:py-24 lg:py-26">
+      <div className="container px-4 sm:px-6 md:px-6">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
           <div>
             <div className="space-y-2">
@@ -15,13 +15,13 @@ const RoyalLuxury = () => {
               </div>
               <h2
                 style={{ color: "black" }}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter"
               >
                 Luxury Living in a Prime Location
               </h2>
               <p
                 style={{ color: "black" }}
-                className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+                className="max-w-[600px] text-muted-foreground text-sm sm:text-base md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed"
               >
                 Our housing scheme is meticulously designed to offer you the
                 ultimate luxury living experience. Nestled in a prime location,
