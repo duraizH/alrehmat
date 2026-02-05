@@ -19,12 +19,18 @@ const Projects = () => {
 			<section className="my-12 sm:my-20">
 				<div className="mx-auto grid container grid-cols-1 md:grid-cols-2 gap-8 max-w-[1000px] justify-items-center align-baseline px-4 sm:px-6">
 					<div className="col-span-1 w-full flex justify-center">
-						<Link to={`/projects/meriton`}>
+						<Link
+							to={`/projects/meriton`}
+							className="w-full flex justify-center max-w-[420px] sm:max-w-none"
+						>
 							<Card imgsrcModel={meritonModel} imgsrcCover={meritonCover} />
 						</Link>
 					</div>
 					<div className="col-span-1 w-full flex justify-center">
-						<Link to={`/projects/alrehmat-residencia`}>
+						<Link
+							to={`/projects/alrehmat-residencia`}
+							className="w-full flex justify-center max-w-[420px] sm:max-w-none"
+						>
 							<Card imgsrcModel={cardRoyal} imgsrcCover={cardRoyalBg} />
 						</Link>
 					</div>
