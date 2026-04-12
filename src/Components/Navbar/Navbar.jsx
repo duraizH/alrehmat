@@ -1,36 +1,63 @@
-import React from 'react'
-import { useState,useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import logo from "../../assets/logos.png"
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
-   const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition =
+        window.pageYOffset ||
+        window.scrollY ||
+        document.documentElement.scrollTop ||
+        0;
+      setIsScrolled(scrollPosition > 0);
+    };
 
-   useEffect(() => {
-     const handleScroll = () => {
-       const scrollPosition =
-         window.pageYOffset ||
-         window.scrollY ||
-         document.documentElement.scrollTop ||
-         0;
-       setIsScrolled(scrollPosition > 0);
-     };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-     window.addEventListener("scroll", handleScroll);
-     return () => {
-       window.removeEventListener("scroll", handleScroll);
-     };
-   }, []);
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  const closeMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(false);
+  }, []);
+
+  const navLinks = [
+    { to: "/", label: "HOME" },
+    { to: "/about", label: "ABOUT US" },
+    { to: "/projects", label: "PROJECTS" },
+    { to: "/registration", label: "DEALERS REGISTRATION" },
+    { to: "/contact", label: "CONTACT US" },
+  ];
+
+  const isActiveRoute = (path) => {
+    if (path === "/") return location.pathname === "/";
+    return location.pathname.startsWith(path);
+  };
 
   return (
     <div
-      className={`fixed top-0 right-0 left-0  navbar bg-white  z-50 w-full transition-all duration-300 ${
+      className={`fixed top-0 right-0 left-0 navbar bg-white z-50 w-full transition-all duration-300 ${
         isScrolled ? "bg-white shadow-md" : ""
       }`}
     >
       <div className="navbar-start w-full md:w-3/6 px-2">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label
+            tabIndex={0}
+            className="btn btn-ghost lg:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -46,41 +73,32 @@ const Navbar = () => {
               />
             </svg>
           </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <Link className="font-bold" to="/">
-                HOME
-              </Link>
-            </li>
-            <li>
-              <Link className="font-bold" to="/about">
-                ABOUT US
-              </Link>
-            </li>
-            <li>
-              <Link className="font-bold" to="/projects">
-                PROJECTS
-              </Link>
-            </li>
-            <li>
-              <Link className="font-bold" to="/registration">
-                DEALERS REGISTRATION
-              </Link>
-            </li>
-
-            <li>
-              <Link className="font-bold" to="/contact">
-                CONTACT US
-              </Link>
-            </li>
-          </ul>
+          {isMobileMenuOpen && (
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              {navLinks.map((link) => (
+                <li key={link.to}>
+                  <Link
+                    className={`font-bold transition-colors duration-200 ${
+                      isActiveRoute(link.to)
+                        ? "text-[#CBA664]"
+                        : "text-black hover:text-[#CBA664]"
+                    }`}
+                    to={link.to}
+                    onClick={closeMobileMenu}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
         <Link to="/" className="">
           <img
-            className="w-40 sm:w-48 md:w-56 lg:w-96"
+            className="w-32 sm:w-40 md:w-48 lg:w-72"
             src={logo}
             alt="Al-Rehmat Developers"
             loading="eager"
@@ -90,37 +108,26 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li className=" text-black  ">
-            <Link className="font-bold" to="/">
-              HOME
-            </Link>
-          </li>
-          <li className="text-black ">
-            <Link className="font-bold" to="/about">
-              ABOUT US
-            </Link>
-          </li>
-          <li className="text-black ">
-            <Link className="font-bold" to="/projects">
-              PROJECTS
-            </Link>
-          </li>
-          <li className="text-black ">
-            <Link className="font-bold" to="/registration">
-              DEALERS REGISTRATION
-            </Link>
-          </li>
-          <li className="text-black ">
-            <Link className="font-bold" to="/contact">
-              CONTACT US
-            </Link>
-          </li>
+          {navLinks.map((link) => (
+            <li key={link.to} className="text-black">
+              <Link
+                className={`font-bold relative transition-colors duration-200 nav-link-hover ${
+                  isActiveRoute(link.to)
+                    ? "text-[#CBA664] nav-link-active"
+                    : "text-black hover:text-[#CBA664]"
+                }`}
+                to={link.to}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
-      <div className="navbar-end sm:btn-sm">
+      <div className="navbar-end">
         <Link
           to="/contact"
-          className="font-bold btn lg:btn-lg md:btn-sm btn-xs text-white outline-none border-[0]   bg-[#CBA664]"
+          className="font-bold btn lg:btn-md md:btn-sm btn-xs text-white outline-none border-[0] bg-[#CBA664] hover:bg-[#b08d55] transition-all duration-300 hover:shadow-lg hover:scale-105"
         >
           MEET US
         </Link>

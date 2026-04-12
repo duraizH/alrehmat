@@ -17,9 +17,9 @@ import CardDealers from "./CardDealers";
           ahead of their time and carry the prospect of maximum returns. We
           tailor them as per the needs of our esteemed clients with thorough
           homework and due diligence.
-          <p className="text-left my-10">
+          <span className="block text-left my-10">
             Our exclusive business offerings comprise:
-          </p>
+          </span>
         </PageTitle>
       </div>
       <div className="mx-auto container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-4xl px-4 sm:px-6">

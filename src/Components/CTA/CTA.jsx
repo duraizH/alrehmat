@@ -45,6 +45,7 @@ const CTA = () => {
         },
         (error) => {
           console.error("Error:", error.text);
+          setSending(false);
           alert("Failed to send message. Please try again.");
         }
       );

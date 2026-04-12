@@ -1,6 +1,6 @@
 :root {
     --card-height: clamp(220px, 60vw, 320px);
-    --card-width: min(100%, calc(var(--card-height) / 1));
+    --card-width: clamp(220px, 60vw, 420px);
 }
 
 * {
@@ -9,28 +9,36 @@
 
 
 .cardCustom {
+    /* fill available column but limit maximum size so grid gaps work
+       nicely on larger screens. Remove large margins so Tailwind grid
+       gap controls spacing. Center content vertically. */
     width: var(--card-width);
+    max-width: 100%;
     height: var(--card-height);
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    padding: 0 36px;
-    perspective: 2500px;
-    margin: 0 50px;
-    max-width: 100%;
+    align-items: center;
+    padding: 0;
+    perspective: 1500px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .cover-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .wrapper {
-    transition: all 0.5s;
+    transition: transform 0.5s, box-shadow 0.5s;
     position: absolute;
+    inset: 0;
     width: 100%;
+    height: 100%;
+    overflow: hidden;
     z-index: 0;
 }
 
@@ -89,21 +97,30 @@
 }
 
 .character {
-    width: 100%;
+    max-width: 70%;
     opacity: 0;
-    transition: all 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
     position: absolute;
-    z-index: 0;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12px;
 }
 
 .cardCustom:hover .character {
     opacity: 1;
-    transform: translate3d(0%, -30%, 100px);
+    transform: translate(-50%, -20%);
 }
 
 @media (max-width: 640px) {
+    :root {
+        --card-height: auto;
+        --card-width: 100%;
+    }
+
     .cardCustom {
         width: 100%;
+        max-width: 100%;
         height: auto;
         padding: 0;
         margin: 0;

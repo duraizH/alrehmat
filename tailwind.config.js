@@ -18,6 +18,8 @@ export default /** @type {import('tailwindcss').Config} */ {
       '3xl': '1.953rem',
       '4xl': '2.441rem',
       '5xl': '3.052rem',
+      '6xl': '3.75rem',
+      '7xl': '4.5rem',
     },
     fontWeight: {
       thin: '100',

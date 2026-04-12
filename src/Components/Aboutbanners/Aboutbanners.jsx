@@ -45,14 +45,14 @@ const Aboutbanners = () => {
             others. Our projects are located in some of Lahore finest locations
             and we are constantly looking to the future for the ideas and
             opportunities that will underpin truly iconic and spirited outcomes.
-            <p>
+            <span className="block mt-4">
               Steeped in quality, beauty and unparallel project delivery, we
               celebrate the new and the next and understand that being
               extraordinary is about being unique, without comparison or equal.
               We welcome you into our world and know that our developed
               residences will certainly leave a trace, a lasting impression for
               you to return to and enjoy time and time again.
-            </p>
+            </span>
           </PageTitle>
           <div className="mx-auto mt-12 sm:mt-20 mb-24 sm:mb-48 grid max-w-5xl grid-cols-1 gap-12 sm:gap-16">
             <AboutCard

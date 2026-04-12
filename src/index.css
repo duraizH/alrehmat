@@ -29,3 +29,27 @@ body {
     padding-top: 60px;
   }
 }
+
+/* ─── Nav Link Hover Underline Effect ─── */
+.nav-link-hover {
+  position: relative;
+}
+
+.nav-link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 2px;
+  background-color: #CBA664;
+  border-radius: 1px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.nav-link-hover:hover::after,
+.nav-link-active::after {
+  transform: translateX(-50%) scaleX(1);
+}

@@ -18,20 +18,21 @@ import RoyalResidenciaPage from "./Pages/RoyalResidencia"
 const TRACKING_ID = "G-111B6N0MNE"
 ReactGA.initialize(TRACKING_ID)
 
+function ScrollToTop() {
+	const { pathname } = useLocation()
+
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [pathname])
+
+	return null
+}
+
 function App() {
 	// useEffect(() => {
 	//   ReactGA.pageview(window.location.pathname + window.location.search);
 	// }, []);
 
-	function ScrollToTop() {
-		const { pathname } = useLocation()
-
-		useEffect(() => {
-			window.scrollTo(0, 0)
-		}, [pathname])
-
-		return null
-	}
 	return (
 		<>
 			<Helmet>
