@@ -2,6 +2,7 @@ import { Suspense } from "react"
 import { Helmet } from "react-helmet"
 import ContactForm from "../Components/ContactForm/ContactForm"
 import RoyalHero from "../Components/RoyalHero/RoyalHero"
+import Loader from "../Components/Loader/Loader"
 
 const RoyalResidenciaPage = () => {
 	//  useEffect(() => {
@@ -13,11 +14,7 @@ const RoyalResidenciaPage = () => {
 				<title>Royal Residencia Al-Rehmat</title>
 				<meta name="description" content="Royal Residencia Rehmat Developers" />
 			</Helmet>
-			<Suspense
-				fallback={
-					<span className="loading loading-spinner text-warning"></span>
-				}
-			>
+			<Suspense fallback={<Loader />}>
 				<div className="flex flex-col min-h-[100dvh]  mx-auto bg-[#ECE3D4]">
 					<RoyalHero />
 					{/* <RoyalLuxury />

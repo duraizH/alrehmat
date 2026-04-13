@@ -8,6 +8,8 @@ import MeritonFormula from "../Components/MeritonFormula/MeritonFormula";
 import { MeritonInterior } from "../Components/MeritonInterior/MeritonInterior";
 import MeritonOverView from "../Components/MeritonOverView/MeritonOverView";
 
+import Loader from "../Components/Loader/Loader";
+
 const Meriton = () => {
     //  useEffect(() => {
     //    ReactGA.pageview(window.location.pathname + window.location.search);
@@ -18,11 +20,7 @@ const Meriton = () => {
         <title>Meriton Al-Rehmat</title>
         <meta name="description" content="Meriton Al Rehmat Developers" />
       </Helmet>
-      <Suspense
-        fallback={
-          <span className="loading loading-spinner text-warning"></span>
-        }
-      >
+      <Suspense fallback={<Loader />}>
         <MeritonOverView />
         <MeritonAmeneties />
         <MeritonFormula />

@@ -1,19 +1,20 @@
-import { useEffect } from "react"
+import { useEffect, Suspense, lazy } from "react"
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
 import Footer from "./Components/Footer/Footer"
 import Navbar from "./Components/Navbar/Navbar"
-import About from "./Pages/About"
-import Contact from "./Pages/Contact"
-import DealersRegistration from "./Pages/DealersRegistration"
-import Home from "./Pages/Home"
-import Meriton from "./Pages/Meriton"
-import Projects from "./Pages/Projects"
-// import { ReactComponent as CompanyIcon } from "./assets/CompanySVG";
+import Loader from "./Components/Loader/Loader"
 import ReactGA from "react-ga4"
 import { Helmet } from "react-helmet"
 import { WhatsAppWidget } from "react-whatsapp-widget"
 import "react-whatsapp-widget/dist/index.css"
-import RoyalResidenciaPage from "./Pages/RoyalResidencia"
+
+const About = lazy(() => import("./Pages/About"))
+const Contact = lazy(() => import("./Pages/Contact"))
+const DealersRegistration = lazy(() => import("./Pages/DealersRegistration"))
+const Home = lazy(() => import("./Pages/Home"))
+const Meriton = lazy(() => import("./Pages/Meriton"))
+const Projects = lazy(() => import("./Pages/Projects"))
+const RoyalResidenciaPage = lazy(() => import("./Pages/RoyalResidencia"))
 
 const TRACKING_ID = "G-111B6N0MNE"
 ReactGA.initialize(TRACKING_ID)
@@ -47,19 +48,21 @@ function App() {
 			<BrowserRouter>
 				<Navbar />
 				<ScrollToTop />
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/about" element={<About />} />
-					<Route path="/contact" element={<Contact />} />
-					<Route path="/registration" element={<DealersRegistration />} />
-					<Route path="/projects" element={<Projects />} />
-					<Route path="/projects/meriton" element={<Meriton />} />
-					<Route
-						path="/projects/alrehmat-residencia"
-						element={<RoyalResidenciaPage />}
-					/>
-					<Route path="*" element={<Home />} />
-				</Routes>
+				<Suspense fallback={<Loader />}>
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/about" element={<About />} />
+						<Route path="/contact" element={<Contact />} />
+						<Route path="/registration" element={<DealersRegistration />} />
+						<Route path="/projects" element={<Projects />} />
+						<Route path="/projects/meriton" element={<Meriton />} />
+						<Route
+							path="/projects/alrehmat-residencia"
+							element={<RoyalResidenciaPage />}
+						/>
+						<Route path="*" element={<Home />} />
+					</Routes>
+				</Suspense>
 				<Footer />
 			</BrowserRouter>
 			<WhatsAppWidget
