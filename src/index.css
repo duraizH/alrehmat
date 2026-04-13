@@ -53,3 +53,17 @@ body {
 .nav-link-active::after {
   transform: translateX(-50%) scaleX(1);
 }
+
+/* ─── Override DaisyUI Menu Active/Focus Styles ─── */
+.menu li > *:active,
+.menu li > *:focus,
+.menu li > *:hover,
+.menu li > a.active {
+  background-color: transparent !important;
+}
+
+.menu li > a:active,
+.menu li > a:focus,
+.menu li > a:hover {
+  color: #CBA664 !important;
+}
