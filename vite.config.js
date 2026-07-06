@@ -32,7 +32,7 @@ export default defineConfig({
         }
       }
     },
-    outDir: 'build',
+    outDir: 'dist',
     target: 'es2015'
   },
   test: {
