@@ -47,12 +47,12 @@ export const MeritonInterior = () => {
             alt="Meriton Interior Al-Rehmat"
             loading={index === 0 ? "eager" : "lazy"}
             decoding="async"
-          />
+           width="800" height="600" />
         ))}
-        {/* <img className="w-full" src={int2} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={int3} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={int4} alt="Meriton Interior Al-Rehmat" />
-        <img className="w-full" src={int5} alt="Meriton Interior Al-Rehmat" /> */}
+        {/* <img className="w-full" src={int2} alt="Meriton Interior Al-Rehmat"  loading="lazy"  width="800" height="600" />
+        <img className="w-full" src={int3} alt="Meriton Interior Al-Rehmat"  loading="lazy"  width="800" height="600" />
+        <img className="w-full" src={int4} alt="Meriton Interior Al-Rehmat"  loading="lazy"  width="800" height="600" />
+        <img className="w-full" src={int5} alt="Meriton Interior Al-Rehmat"  loading="lazy"  width="800" height="600" /> */}
       </div>
     </>
   );

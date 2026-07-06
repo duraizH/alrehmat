@@ -121,7 +121,7 @@ const ProjectShowcase = () => {
               alt="Al Rehmat Royal Residencia"
               loading="lazy"
               decoding="async"
-            />
+             width="800" height="600" />
           </figure>
           <div className="project__details">
             <div className="project__title">
@@ -159,7 +159,7 @@ const ProjectShowcase = () => {
               className="w-100 p_img"
               loading="lazy"
               decoding="async"
-            />
+             width="800" height="600" />
           </figure>
           <div className="project__details">
             <div className="project__title">

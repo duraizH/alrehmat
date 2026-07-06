@@ -80,6 +80,7 @@ setSending(false);
   </>
 )}
       <div className="container my-16 sm:my-24 mx-auto px-4 md:px-6" id="Contact-form">
+        <h1 className="sr-only">Contact Al-Rehmat Developers</h1>
         <section className="mb-32">
           <div
             className="relative h-[300px] overflow-hidden bg-cover bg-[50%] bg-no-repeat "

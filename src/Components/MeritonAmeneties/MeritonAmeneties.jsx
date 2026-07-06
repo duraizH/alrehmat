@@ -35,7 +35,7 @@ const MeritonAmeneties = () => {
           className="w-full max-w-[220px] mx-auto"
           loading="lazy"
           decoding="async"
-        />
+         width="800" height="600" />
         <Ameneties features={ameneties} heading={"Amenities"} />
         <Ameneties features={salientFeatures} heading={"Salient Features"} />
       </div>

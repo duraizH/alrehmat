@@ -79,7 +79,7 @@ const Footer = () => {
             className="link link-hover"
             rel="noreferrer"
             target="_blank"
-            href="https://www.linkedin.com/in/duraiz-hanjra-6a982b245/"
+            href="https://www.linkedin.com/in/duraizhaider/"
           >
             Duraiz Haider
           </a>

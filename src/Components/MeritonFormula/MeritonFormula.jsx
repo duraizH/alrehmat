@@ -14,7 +14,7 @@ const MeritonFormula = () => {
             alt="Meriton Building Al Rehmat"
             loading="lazy"
             decoding="async"
-          />
+           width="800" height="600" />
       
         </div>
         <div className="xl:col-span-5 md:col-span-12 ">
@@ -24,7 +24,7 @@ const MeritonFormula = () => {
             alt="Meriton Apartments"
             loading="lazy"
             decoding="async"
-          />
+           width="800" height="600" />
           <div className="text-center px-4 sm:px-8 lg:px-10 space-y-6">
             <h1 className="text-[#CBA664] text-2xl sm:text-3xl lg:text-4xl my-4">
               Winning Formula <br /> Meriton Apartments

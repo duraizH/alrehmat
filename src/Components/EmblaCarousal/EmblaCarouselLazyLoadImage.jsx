@@ -29,7 +29,7 @@ export const LazyLoadImage = (props) => {
           data-src={imgSrc}
           loading="lazy"
           decoding="async"
-        />
+         width="800" height="600" />
       </div>
     </div>
   );

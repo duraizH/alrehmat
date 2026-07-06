@@ -1,79 +1,92 @@
-const imageFiles = [
-	"Al Rehmat Residencia (2)_page-0001.jpg",
-	"Al Rehmat Residencia (2)_page-0002.jpg",
-	"Al Rehmat Residencia (2)_page-0003.jpg",
-	"Al Rehmat Residencia (2)_page-0004.jpg",
-	"Al Rehmat Residencia (2)_page-0005.jpg",
-	"Al Rehmat Residencia (2)_page-0006.jpg",
-	"Al Rehmat Residencia (2)_page-0007.jpg",
-	"Al Rehmat Residencia (2)_page-0008.jpg",
-	"Al Rehmat Residencia (2)_page-0009.jpg",
-	"Al Rehmat Residencia (2)_page-0010.jpg",
-	"Al Rehmat Residencia (2)_page-0011.jpg",
-	"Al Rehmat Residencia (2)_page-0012.jpg",
-	"Al Rehmat Residencia (2)_page-0013.jpg",
-	"Al Rehmat Residencia (2)_page-0014.jpg",
-	"Al Rehmat Residencia (2)_page-0015.jpg",
-	"Al Rehmat Residencia (2)_page-0016.jpg",
-]
+import { useEffect, useState } from "react"
+import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf"
+import pdfWorkerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url"
+import Loader from "../Loader/Loader"
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl
+const pdfUrl = new URL("../../assets/royal-residencia/Al-Rehmat-Residencia.pdf", import.meta.url).href
 
 const RoyalHero = () => {
+	const [pageImages, setPageImages] = useState([])
+	const [loading, setLoading] = useState(true)
+	const [error, setError] = useState(null)
+
+	useEffect(() => {
+		let canceled = false
+
+		const loadPdf = async () => {
+			try {
+				const loadingTask = pdfjsLib.getDocument(pdfUrl)
+				const pdf = await loadingTask.promise
+				const pages = []
+
+				for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+					if (canceled) return
+					const page = await pdf.getPage(pageNum)
+					const viewport = page.getViewport({ scale: 1.2 })
+					const canvas = document.createElement("canvas")
+					const context = canvas.getContext("2d")
+					canvas.width = Math.floor(viewport.width)
+					canvas.height = Math.floor(viewport.height)
+
+					await page.render({ canvasContext: context, viewport }).promise
+					const dataUrl = canvas.toDataURL("image/jpeg", 0.8)
+
+					pages.push({
+						src: dataUrl,
+						pageNumber: pageNum,
+						width: canvas.width,
+						height: canvas.height,
+					})
+
+					if (!canceled) {
+						setPageImages([...pages])
+					}
+				}
+
+				if (!canceled) setLoading(false)
+			} catch (err) {
+				if (!canceled) {
+					setError(err?.message || "Unable to load PDF document")
+					setLoading(false)
+				}
+			}
+		}
+
+		loadPdf()
+
+		return () => {
+			canceled = true
+		}
+	}, [])
+
 	return (
-		<section className="w-full flex justify-center  md:pt-24 lg:pt-32 pt-[6rem]">
+		<section className="w-full flex justify-center md:pt-24 lg:pt-32 pt-[6rem]">
 			<div className="container space-y-10 xl:space-y-16 px-4 sm:px-6">
+				{loading && (
+					<Loader/>
+				)}
+				{error && (
+					<div className="text-center text-sm text-red-600">{error}</div>
+				)}
 				<div className="flex flex-col items-center justify-evenly">
-					{imageFiles.map((img, index) => (
+					{pageImages.map((page, index) => (
 						<div
-							key={index}
+							key={page.pageNumber}
 							className="animate-fade-up animate-once animate-ease-in animate-fill-forwards"
 						>
 							<img
-								src={`/royal/royalImages/${img}`}
-								alt={`Royal Image ${index + 1}`}
-								className="mx-auto aspect-[4/3] sm:aspect-[3/1] overflow-hidden rounded-t-xl object-contain"
+								src={page.src}
+								alt={`Royal Residence page ${page.pageNumber}`}
+								className="mx-auto w-full max-w-6xl overflow-hidden rounded-t-xl object-contain"
 								loading={index === 0 ? "eager" : "lazy"}
 								decoding="async"
-							/>
+								width={page.width}
+								height={page.height}
+							/> 
 						</div>
 					))}
 				</div>
-
-				{/* <div className="grid gap-4 px-10 md:grid-cols-2 md:gap-16">
-          <div className="animate-fade-right animate-once animate-ease-in animate-fill-forwards">
-            <h1
-              style={{ color: "black" }}
-              className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]"
-            >
-              Discover Your Dream Home at Our Luxurious Housing Scheme
-            </h1>
-          </div>
-          <div className="flex flex-col items-start space-y-4 animate-fade-left animate-once animate-ease-in animate-fill-forwards">
-            <p
-              style={{ color: "black" }}
-              className="mx-auto max-w-[700px] text-muted-foreground md:text-xl"
-            >
-              Nestled in a prime location, our housing scheme offers a perfect
-              blend of modern amenities and serene living. Explore our range of
-              stunning homes and find your ideal sanctuary.
-            </p>
-            <ScrollLink
-              style={{ backgroundColor: "#CBA664", color: "white" }}
-              to="plot-section"
-              smooth={true}
-              duration={500}
-              className=" cursor-pointer  hover:animate-wiggle-more hover:animate-infinite hover:animate-ease-in-out  inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors  focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50  duration-300 "
-            >
-              Explore Plots
-            </ScrollLink>
-          </div>
-        </div>
-        <img
-          src={royal1}
-          width="1270"
-          height="500"
-          alt="Hero"
-          className="mx-auto aspect-[3/1] overflow-hidden rounded-t-xl object-cover animate-fade-up animate-once animate-ease-in animate-fill-forwards"
-        /> */}
 			</div>
 		</section>
 	)

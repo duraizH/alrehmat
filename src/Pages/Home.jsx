@@ -13,8 +13,12 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Home Al-Rehmat</title>
-        <meta name="description" content="Home Al Rehmat Developers" />
+        <title>Home | Al-Rehmat Developers</title>
+        <meta name="description" content="Welcome to Al-Rehmat Developers. We build premium residential and commercial projects including Meriton and Al-Rehmat Residencia, delivering excellence in real estate." />
+        <link rel="canonical" href="https://alrehmatdevelopers.com/" />
+        <meta property="og:title" content="Home | Al-Rehmat Developers" />
+        <meta property="og:description" content="Welcome to Al-Rehmat Developers. We build premium residential and commercial projects including Meriton and Al-Rehmat Residencia, delivering excellence in real estate." />
+        <meta property="og:url" content="https://alrehmatdevelopers.com/" />
       </Helmet>
       <Hero />
       <Work />

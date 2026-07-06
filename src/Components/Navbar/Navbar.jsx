@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import logo from "../../assets/logos.png"
+import logo from "../../assets/logos.webp"
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
@@ -103,6 +103,9 @@ const Navbar = () => {
             alt="Al-Rehmat Developers"
             loading="eager"
             decoding="async"
+            fetchPriority="high"
+            width="1385"
+            height="269"
           />
         </Link>
       </div>

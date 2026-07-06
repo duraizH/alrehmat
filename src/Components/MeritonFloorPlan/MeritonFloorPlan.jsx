@@ -9,7 +9,7 @@ const MeritonFloorPlan = () => {
           alt="Floor Plan Meriton Apartment"
           loading="lazy"
           decoding="async"
-        />
+         width="800" height="600" />
       </div>
     </>
   );

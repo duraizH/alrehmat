@@ -4,6 +4,7 @@ import image3 from '../assets/projectslide2.webp'
 import image4 from '../assets/projectslide3.webp'
 import image5 from '../assets/projectslide4.webp'
 import image6 from '../assets/projectslide5.webp'
+import image7 from "../assets/main-project-slides/w1.webp"
 
 export const images = [image1, image2, image3, image4, image5, image6]
 

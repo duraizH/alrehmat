@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../../assets/logos.png";
+import logo from "../../assets/logos.webp";
 
 const Loader = () => {
   return (
@@ -10,6 +10,10 @@ const Loader = () => {
           alt="Loading Al-Rehmat..." 
           className="w-48 sm:w-64 animate-fade-down animate-once animate-duration-1000"
           loading="eager"
+          decoding="async"
+          fetchPriority="high"
+          width="1385"
+          height="269"
         />
         <span className="loading loading-dots loading-lg text-[#CBA664]"></span>
       </div>

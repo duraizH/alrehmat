@@ -11,11 +11,15 @@ const DealersRegistration = () => {
   return (
     <>
       <Helmet>
-        <title>Dealers Registration Al-Rehmat</title>
+        <title>Dealers Registration | Al-Rehmat Developers</title>
         <meta
           name="description"
-          content="Dealers Registration Al Rehmat Developers"
+          content="Register as a dealer with Al-Rehmat Developers and partner with us to sell premium real estate properties in Pakistan."
         />
+        <link rel="canonical" href="https://alrehmatdevelopers.com/registration" />
+        <meta property="og:title" content="Dealers Registration | Al-Rehmat Developers" />
+        <meta property="og:description" content="Register as a dealer with Al-Rehmat Developers and partner with us to sell premium real estate properties in Pakistan." />
+        <meta property="og:url" content="https://alrehmatdevelopers.com/registration" />
       </Helmet>
       <DealersDetails />
       {/* <DealerContactForm /> */}

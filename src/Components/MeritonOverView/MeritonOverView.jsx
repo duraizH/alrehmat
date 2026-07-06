@@ -17,35 +17,35 @@ const MeritonOverView = () => {
             className="w-full rounded-lg object-cover"
             loading="eager"
             decoding="async"
-          />
+           width="800" height="600" />
           <img
             src={meriton2}
             alt="Meriton Apartments Al-Rehmat Developers"
             className="w-full rounded-lg object-cover"
             loading="lazy"
             decoding="async"
-          />
+           width="800" height="600" />
           <img
             src={meriton3}
             alt="Meriton Apartments Al-Rehmat Developers"
             className="w-full rounded-lg object-cover"
             loading="lazy"
             decoding="async"
-          />
+           width="800" height="600" />
           <img
             src={meriton4}
             alt="Meriton Apartments Al-Rehmat Developers"
             className="w-full rounded-lg object-cover"
             loading="lazy"
             decoding="async"
-          />
+           width="800" height="600" />
           <img
             src={meriton5}
             alt="Meriton Apartments Al-Rehmat Developers"
             className="w-full rounded-lg object-cover"
             loading="lazy"
             decoding="async"
-          />
+           width="800" height="600" />
         </div>
         <div className="container mx-auto lg:px-32 md:px-10 px-4 ">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

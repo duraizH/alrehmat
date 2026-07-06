@@ -14,10 +14,15 @@ const Projects = () => {
 	return (
 		<>
 			<Helmet>
-				<title>Projects Al-Rehmat</title>
-				<meta name="description" content="Projects Al Rehmat Developers" />
+				<title>Our Projects | Al-Rehmat Developers</title>
+				<meta name="description" content="Explore the premium real estate projects by Al-Rehmat Developers, including Meriton and Al-Rehmat Residencia. Find your next investment with us." />
+				<link rel="canonical" href="https://alrehmatdevelopers.com/projects" />
+				<meta property="og:title" content="Our Projects | Al-Rehmat Developers" />
+				<meta property="og:description" content="Explore the premium real estate projects by Al-Rehmat Developers, including Meriton and Al-Rehmat Residencia. Find your next investment with us." />
+				<meta property="og:url" content="https://alrehmatdevelopers.com/projects" />
 			</Helmet>
-			<section className="w-full min-h-[60vh] md:min-h-[calc(100vh-80px)] flex items-center justify-center bg-white px-4 sm:px-6 py-8">
+			<section className="w-full min-h-[60vh] md:min-h-[calc(100vh-80px)] flex items-center justify-center bg-white px-4 sm:px-6 py-12 sm:py-16">
+				<h1 className="sr-only">Our Real Estate Projects - Al-Rehmat Developers</h1>
 				<div className="mx-auto grid grid-cols-1 sm:grid-cols-2 max-w-[1200px] gap-4 sm:gap-6 md:gap-8 justify-items-center w-full">
 					<div className=" col-span-1">
 						<Link to={`/projects/meriton`}>

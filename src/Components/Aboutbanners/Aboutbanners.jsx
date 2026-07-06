@@ -1,19 +1,8 @@
 import React from 'react'
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Typography,
-  Button,
-  IconButton,
-  Input,
-  Textarea,
-} from "@material-tailwind/react";
 import { PageTitle } from "../PageTitle/PageTitle";
-import { contactData } from "../PageTitle/contact-data";
-import experience from "../../assets/experience.webp"
-import safety from "../../assets/community.webp"
-import client from "../../assets/client.webp";
+import vision from "../../assets/about/our-vision.webp"
+import community from "../../assets/about/community.webp"
+import main_about from "../../assets/about/main-about.webp"
 import AboutCard from './AboutCard';
 import { Helmet } from 'react-helmet';
 
@@ -56,25 +45,35 @@ const Aboutbanners = () => {
           </PageTitle>
           <div className="mx-auto mt-12 sm:mt-20 mb-24 sm:mb-48 grid max-w-5xl grid-cols-1 gap-12 sm:gap-16">
             <AboutCard
-              img={experience}
+              img={vision}
+              alt="Protecting our people"
               heading={"Protecting our People"}
               description={
                 "Our people are the lifeblood of Al-Rehmat. As such we have a deeply ingrained safety culture to educate, promote and regulate occupational health and safety processes throughout our enterprise. We believe a safe site is paramount to creating efficient teams, and have developed a unique and innovative safety initiative to empower our teams and optimize our workforce."
               }
+              priority
+              width={921}
+              height={1152}
             />
             <AboutCard
-              img={safety}
+              img={community}
+              alt="Building communities"
               heading={"Building Communities with excellence"}
               description={
                 "Our team is composed of specialists in construction, business, finance, design and property development who work together to deliver full scale construction services. We believe in the value of leadership and we recruit innovative individuals to develop and nurture the very best in the industry."
               }
+              width={921}
+              height={1152}
             />
             <AboutCard
-              img={client}
+              img={main_about}
+              alt="Client care"
               heading={"Client Care"}
               description={
                 "At Al-Rehmat, we believe that delivering a project on time and upmost quality in development work is only the beginning of what it takes to get the job done. Our client care processes ensure that each individual plot or residence handover is completed with the best service possible. We know good communication is the key to building strong relationships for our project stakeholders. We encourage our clients to communicate with us."
               }
+              width={1536}
+              height={1024}
             />
           </div>
         </div>

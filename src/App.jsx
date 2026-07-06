@@ -38,12 +38,41 @@ function App() {
 		<>
 			<Helmet>
 				<meta charSet="utf-8" />
-				<title>Al Rehmat Developers</title>
+				<title>Al-Rehmat Developers | Top Real Estate & Construction</title>
+				<meta
+					name="description"
+					content="Al-Rehmat Developers offers premier real estate and construction services, specializing in premium residential and commercial projects like Meriton and Al-Rehmat Residencia."
+				/>
 				<meta
 					name="google-site-verification"
 					content="ZaamaPju4b_YQslADdx5QhirEtNsrkxE8IGpPmEEHpE"
 				/>
 				<link rel="canonical" href="https://alrehmatdevelopers.com/" />
+				
+				{/* Open Graph Global Tags */}
+				<meta property="og:site_name" content="Al-Rehmat Developers" />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://alrehmatdevelopers.com/" />
+				<meta property="og:title" content="Al-Rehmat Developers | Top Real Estate & Construction" />
+				<meta property="og:description" content="Al-Rehmat Developers offers premier real estate and construction services, specializing in premium residential and commercial projects." />
+				
+				{/* Twitter Cards Global Tags */}
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:title" content="Al-Rehmat Developers" />
+				<meta name="twitter:description" content="Al-Rehmat Developers offers premier real estate and construction services." />
+
+				{/* JSON-LD Structured Data */}
+				<script type="application/ld+json">
+					{`
+					{
+						"@context": "https://schema.org",
+						"@type": "RealEstateAgent",
+						"name": "Al-Rehmat Developers",
+						"url": "https://alrehmatdevelopers.com/",
+						"description": "Top real estate developers and builders, offering premium projects like Meriton and Al-Rehmat Residencia."
+					}
+					`}
+				</script>
 			</Helmet>
 			<BrowserRouter>
 				<Navbar />

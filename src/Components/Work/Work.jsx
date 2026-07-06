@@ -14,6 +14,14 @@ import work2 from "../../assets/work/d2.jpg";
 import work3 from "../../assets/work/d3.jpg";
 import work4 from "../../assets/work/d4.jpg";
 import work5 from "../../assets/work/d5.jpg";
+import w1 from "../../assets/main-project-slides/w1.webp"
+import w2 from "../../assets/main-project-slides/w2.webp"
+import w3 from "../../assets/main-project-slides/w3.webp"
+import w4 from "../../assets/main-project-slides/w4.webp"
+import w5 from "../../assets/main-project-slides/w5.webp"
+import w6 from "../../assets/main-project-slides/w6.webp"
+import w7 from "../../assets/main-project-slides/w7.webp"
+import w8 from "../../assets/main-project-slides/w8.webp"
 const autoplayOptions = {
   delay: 4000,
   rootNode: (emblaRoot) => emblaRoot.parentElement,
@@ -66,6 +74,78 @@ const Work = () => {
       <div className="carousal-container lg:col-span-1 md:justify-center md:mt-12 px-2 sm:px-4">
         <div className="embla" ref={emblaRef}>
           <div className="embla__container">
+             <div className="embla__slide">
+              <img
+                style={{ height: "100%", width: "100%", objectFit: "fill" }}
+                src={w1}
+                alt="Al Rehmat is trusted"
+                loading="lazy"
+                decoding="async"
+               width="800" height="600" />
+            </div>
+              <div className="embla__slide">
+              <img
+                style={{ height: "100%", width: "100%", objectFit: "fill" }}
+                src={w2}
+                alt="Al Rehmat is trusted"
+                loading="lazy"
+                decoding="async"
+               width="800" height="600" />
+            </div>
+               <div className="embla__slide">
+              <img
+                style={{ height: "100%", width: "100%", objectFit: "fill" }}
+                src={w3}
+                alt="Al Rehmat is trusted"
+                loading="lazy"
+                decoding="async"
+               width="800" height="600" />
+            </div>
+               <div className="embla__slide">
+              <img
+                style={{ height: "100%", width: "100%", objectFit: "fill" }}
+                src={w4}
+                alt="Al Rehmat is trusted"
+                loading="lazy"
+                decoding="async"
+               width="800" height="600" />
+            </div>
+               <div className="embla__slide">
+              <img
+                style={{ height: "100%", width: "100%", objectFit: "fill" }}
+                src={w5}
+                alt="Al Rehmat is trusted"
+                loading="lazy"
+                decoding="async"
+               width="800" height="600" />
+            </div>
+               <div className="embla__slide">
+              <img
+                style={{ height: "100%", width: "100%", objectFit: "fill" }}
+                src={w6}
+                alt="Al Rehmat is trusted"
+                loading="lazy"
+                decoding="async"
+               width="800" height="600" />
+            </div>
+               <div className="embla__slide">
+              <img
+                style={{ height: "100%", width: "100%", objectFit: "fill" }}
+                src={w7}
+                alt="Al Rehmat is trusted"
+                loading="lazy"
+                decoding="async"
+               width="800" height="600" />
+            </div>
+               <div className="embla__slide">
+              <img
+                style={{ height: "100%", width: "100%", objectFit: "fill" }}
+                src={w8}
+                alt="Al Rehmat is trusted"
+                loading="lazy"
+                decoding="async"
+               width="800" height="600" />
+            </div>
             <div className="embla__slide">
               <img
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
@@ -73,7 +153,16 @@ const Work = () => {
                 alt="Al Rehmat is trusted"
                 loading="lazy"
                 decoding="async"
-              />
+               width="800" height="600" />
+            </div>
+              <div className="embla__slide">
+              <img
+                style={{ height: "100%", width: "100%", objectFit: "cover" }}
+                src={work1}
+                alt="Al Rehmat is trusted"
+                loading="lazy"
+                decoding="async"
+               width="800" height="600" />
             </div>
             <div className="embla__slide">
               <img
@@ -82,7 +171,7 @@ const Work = () => {
                 alt="Al-Rehmat Developers"
                 loading="lazy"
                 decoding="async"
-              />
+               width="800" height="600" />
             </div>
             <div className="embla__slide">
               <img
@@ -91,7 +180,7 @@ const Work = () => {
                 alt="Al-Rehmat Developers"
                 loading="lazy"
                 decoding="async"
-              />
+               width="800" height="600" />
             </div>
             <div className="embla__slide">
               <img
@@ -100,7 +189,7 @@ const Work = () => {
                 alt="Al-Rehmat Developers"
                 loading="lazy"
                 decoding="async"
-              />
+               width="800" height="600" />
             </div>
             <div className="embla__slide">
               <img
@@ -109,7 +198,7 @@ const Work = () => {
                 alt="Al-Rehmat Developers"
                 loading="lazy"
                 decoding="async"
-              />
+               width="800" height="600" />
             </div>
           </div>
         </div>

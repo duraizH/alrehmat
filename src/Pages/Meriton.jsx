@@ -17,8 +17,12 @@ const Meriton = () => {
   return (
     <>
       <Helmet>
-        <title>Meriton Al-Rehmat</title>
-        <meta name="description" content="Meriton Al Rehmat Developers" />
+        <title>Meriton Project | Al-Rehmat Developers</title>
+        <meta name="description" content="Discover Meriton, a premier real estate project by Al-Rehmat Developers offering luxury amenities, premium floor plans, and exceptional ROI." />
+        <link rel="canonical" href="https://alrehmatdevelopers.com/projects/meriton" />
+        <meta property="og:title" content="Meriton Project | Al-Rehmat Developers" />
+        <meta property="og:description" content="Discover Meriton, a premier real estate project by Al-Rehmat Developers offering luxury amenities, premium floor plans, and exceptional ROI." />
+        <meta property="og:url" content="https://alrehmatdevelopers.com/projects/meriton" />
       </Helmet>
       <Suspense fallback={<Loader />}>
         <MeritonOverView />
